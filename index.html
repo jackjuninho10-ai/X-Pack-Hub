@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StoreX Hub</title>
-    <link rel="stylesheet" href="style.css?v=100">
-    <script src="app.js?v=100" defer></script>
+    <link rel="stylesheet" href="style.css?v=500">
+    <script src="app.js?v=500" defer></script>
 </head>
 
 <body>
 
-<main class="page">
+<main id="homePage" class="page">
 
     <header class="topbar">
-        <img src="assets/storex.png" width="62" height="62" class="store-logo" alt="StoreX Hub">
+        <img src="assets/storex.png" class="store-logo" alt="StoreX Hub">
 
         <div>
             <h1>StoreX Hub</h1>
@@ -71,7 +71,7 @@
         <article class="details-card">
 
             <div class="details-header">
-                <img id="detailsIcon" width="92" height="92" class="details-icon" src="" alt="Ícone do app">
+                <img id="detailsIcon" class="details-icon" src="" alt="Ícone do app">
 
                 <div>
                     <h1 id="detailsName">App</h1>
@@ -97,6 +97,27 @@
             </section>
 
             <section class="details-section">
+                <h3>Última atualização</h3>
+                <pre id="detailsChangelog"></pre>
+            </section>
+
+            <section class="details-section">
+                <h3>Sobre o app</h3>
+                <p id="detailsAbout"></p>
+            </section>
+
+            <a id="detailsDownload" class="download-button" href="#" target="_blank" rel="noopener noreferrer">
+                Baixar APK
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+</body>
+</html>            <section class="details-section">
                 <h3>Última atualização</h3>
                 <pre id="detailsChangelog"></pre>
             </section>
