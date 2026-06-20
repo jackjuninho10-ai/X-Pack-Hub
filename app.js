@@ -1,40 +1,159 @@
 const appsList = document.getElementById("appsList");
 const appsCount = document.getElementById("appsCount");
-
-const detailsPage = document.getElementById("detailsPage");
-const backButton = document.getElementById("backButton");
-
-const detailsIcon = document.getElementById("detailsIcon");
-const detailsName = document.getElementById("detailsName");
-const detailsVersionText = document.getElementById("detailsVersionText");
-const detailsVersion = document.getElementById("detailsVersion");
-const detailsSize = document.getElementById("detailsSize");
-const detailsDescription = document.getElementById("detailsDescription");
-const detailsChangelog = document.getElementById("detailsChangelog");
-const detailsAbout = document.getElementById("detailsAbout");
-const detailsDownload = document.getElementById("detailsDownload");
-
-function cleanOldGarbage() {
-    const allowedIds = ["homePage", "detailsPage"];
-
-    Array.from(document.body.childNodes).forEach(node => {
-        if (node.nodeType === Node.TEXT_NODE) {
-            if (node.textContent.trim().length > 0) {
-                node.remove();
-            }
-            return;
-        }
-
-        if (node.nodeType === Node.ELEMENT_NODE) {
-            if (node.tagName.toLowerCase() === "script") return;
-            if (allowedIds.includes(node.id)) return;
-            node.remove();
-        }
-    });
-}
+const detailsHost = document.getElementById("detailsHost");
 
 async function loadApps() {
-    cleanOldGarbage();
+    try {
+        const response = await fetch("apps.json?v=" + Date.now());
+
+        if (!response.ok) {
+            throw new Error("apps.json não encontrado");
+        }
+
+        const apps = await response.json();
+
+        appsCount.textContent = apps.length;
+        appsList.innerHTML = "";
+        detailsHost.innerHTML = "";
+
+        apps.forEach(app => {
+            const card = document.createElement("article");
+            card.className = "app-card";
+
+            const icon = document.createElement("img");
+            icon.className = "app-icon";
+            icon.src = app.icon;
+            icon.alt = app.name;
+
+            const content = document.createElement("div");
+            content.className = "app-content";
+
+            const top = document.createElement("div");
+            top.className = "app-top";
+
+            const name = document.createElement("h3");
+            name.textContent = app.name;
+
+            const version = document.createElement("span");
+            version.className = "app-version";
+            version.textContent = app.versionName;
+
+            top.appendChild(name);
+            top.appendChild(version);
+
+            const desc = document.createElement("p");
+            desc.className = "app-description";
+            desc.textContent = app.description;
+
+            const meta = document.createElement("div");
+            meta.className = "app-meta";
+
+            const size = document.createElement("span");
+            size.textContent = app.size;
+
+            const type = document.createElement("span");
+            type.textContent = "APK";
+
+            meta.appendChild(size);
+            meta.appendChild(type);
+
+            content.appendChild(top);
+            content.appendChild(desc);
+            content.appendChild(meta);
+
+            card.appendChild(icon);
+            card.appendChild(content);
+
+            card.addEventListener("click", () => openDetails(app));
+
+            appsList.appendChild(card);
+        });
+
+    } catch (error) {
+        appsList.innerHTML = "<p class='loading'>Erro ao carregar o catálogo. Confira o apps.json.</p>";
+    }
+}
+
+function openDetails(app) {
+    detailsHost.innerHTML = "";
+
+    const detailsPage = document.createElement("section");
+    detailsPage.className = "details-page";
+
+    detailsPage.innerHTML = `
+        <div class="details-container">
+
+            <header class="details-topbar">
+                <button class="back-button" id="backButton">‹</button>
+                <h2>Detalhes do app</h2>
+            </header>
+
+            <article class="details-card">
+
+                <div class="details-header">
+                    <img class="details-icon" src="${app.icon}" alt="${app.name}">
+
+                    <div>
+                        <h1>${app.name}</h1>
+                        <p>Versão mais atual • ${app.versionName}</p>
+                    </div>
+                </div>
+
+                <div class="details-info-grid">
+                    <div class="details-info-box">
+                        <span>VERSÃO MAIS ATUAL</span>
+                        <strong>${app.versionName}</strong>
+                    </div>
+
+                    <div class="details-info-box">
+                        <span>TAMANHO</span>
+                        <strong>${app.size}</strong>
+                    </div>
+                </div>
+
+                <section class="details-section">
+                    <h3>Descrição</h3>
+                    <p>${app.description || "Sem descrição disponível."}</p>
+                </section>
+
+                <section class="details-section">
+                    <h3>Última atualização</h3>
+                    <pre>${app.latestUpdateLog || "Sem changelog disponível."}</pre>
+                </section>
+
+                <section class="details-section">
+                    <h3>Sobre o app</h3>
+                    <p>${app.aboutLog || app.about || "Sem informações adicionais."}</p>
+                </section>
+
+                <a class="download-button" href="${app.apkUrl}" target="_blank" rel="noopener noreferrer">
+                    Baixar APK
+                </a>
+
+            </article>
+
+        </div>
+    `;
+
+    detailsHost.appendChild(detailsPage);
+    document.body.classList.add("no-scroll");
+
+    const backButton = document.getElementById("backButton");
+    backButton.addEventListener("click", closeDetails);
+}
+
+function closeDetails() {
+    detailsHost.innerHTML = "";
+    document.body.classList.remove("no-scroll");
+}
+
+window.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeDetails();
+    }
+});
+
+loadApps();    cleanOldGarbage();
 
     try {
         const response = await fetch("apps.json?v=" + Date.now());
