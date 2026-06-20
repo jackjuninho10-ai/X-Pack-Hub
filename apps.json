@@ -1,0 +1,29 @@
+[
+  {
+    "name": "CamX",
+    "versionName": "1.2.0.1",
+    "size": "7,0 MB",
+    "icon": "assets/camx.png",
+    "apkUrl": "https://raw.githubusercontent.com/jackjuninho10-ai/X-Pack-Hub/main/apks/CamX_v1.2.0.1.apk",
+    "description": "Câmera alternativa do X Pack com Horizon Lock, perfis avançados e recursos experimentais.",
+    "latestUpdateLog": "CamX v1.2.0.1 — Perfis avançados e resoluções especiais\n\n• Novo menu flutuante de resoluções\n• Perfis Galaxy S avançados\n• Perfil Lite para tablets selecionados\n• Horizon Lock ajustado\n• Correção do áudio no Horizon Lock\n• Mais estabilidade ao trocar câmera e resolução"
+  },
+  {
+    "name": "DnsX",
+    "versionName": "2.2",
+    "size": "3,5 MB",
+    "icon": "assets/dnsx.png",
+    "apkUrl": "https://raw.githubusercontent.com/jackjuninho10-ai/X-Pack-Hub/main/apks/DnsX_v2.2.apk",
+    "description": "Scanner DNS inteligente com VPN local, testes de rede e foco em estabilidade.",
+    "latestUpdateLog": "DnsX v2.2 — Atualização Inteligência de Rede\n\n• Melhorias no scanner DNS\n• Ranking inteligente\n• Perfis por rede\n• Monitor DNS\n• Melhor estabilidade em Wi-Fi e dados móveis"
+  },
+  {
+    "name": "XBattery",
+    "versionName": "2.0.1",
+    "size": "3,7 MB",
+    "icon": "assets/xbattery.png",
+    "apkUrl": "https://raw.githubusercontent.com/jackjuninho10-ai/X-Pack-Hub/main/apks/XBattery_v2.0.1.apk",
+    "description": "Monitor avançado de bateria com Shizuku, saúde, ciclos, temperatura e potência.",
+    "latestUpdateLog": "XBattery v2.0.1 — Correções, Modo Advanced e modo paisagem\n\n• Atualização de dados aprimorada\n• Modo Advanced com ciclos decimais\n• Suporte ao modo paisagem\n• Melhor alinhamento dos cards\n• Melhor estabilidade geral"
+  }
+]
