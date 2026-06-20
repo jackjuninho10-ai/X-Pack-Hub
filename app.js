@@ -14,7 +14,28 @@ const detailsChangelog = document.getElementById("detailsChangelog");
 const detailsAbout = document.getElementById("detailsAbout");
 const detailsDownload = document.getElementById("detailsDownload");
 
+function cleanOldGarbage() {
+    const allowedIds = ["homePage", "detailsPage"];
+
+    Array.from(document.body.childNodes).forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE) {
+            if (node.textContent.trim().length > 0) {
+                node.remove();
+            }
+            return;
+        }
+
+        if (node.nodeType === Node.ELEMENT_NODE) {
+            if (node.tagName.toLowerCase() === "script") return;
+            if (allowedIds.includes(node.id)) return;
+            node.remove();
+        }
+    });
+}
+
 async function loadApps() {
+    cleanOldGarbage();
+
     try {
         const response = await fetch("apps.json?v=" + Date.now());
 
@@ -35,6 +56,87 @@ async function loadApps() {
             icon.className = "app-icon";
             icon.src = app.icon;
             icon.alt = app.name;
+
+            const content = document.createElement("div");
+            content.className = "app-content";
+
+            const top = document.createElement("div");
+            top.className = "app-top";
+
+            const name = document.createElement("h3");
+            name.textContent = app.name;
+
+            const version = document.createElement("span");
+            version.className = "app-version";
+            version.textContent = app.versionName;
+
+            top.appendChild(name);
+            top.appendChild(version);
+
+            const desc = document.createElement("p");
+            desc.className = "app-description";
+            desc.textContent = app.description;
+
+            const meta = document.createElement("div");
+            meta.className = "app-meta";
+
+            const size = document.createElement("span");
+            size.textContent = app.size;
+
+            const type = document.createElement("span");
+            type.textContent = "APK";
+
+            meta.appendChild(size);
+            meta.appendChild(type);
+
+            content.appendChild(top);
+            content.appendChild(desc);
+            content.appendChild(meta);
+
+            card.appendChild(icon);
+            card.appendChild(content);
+
+            card.addEventListener("click", () => openDetails(app));
+
+            appsList.appendChild(card);
+        });
+
+    } catch (error) {
+        appsList.innerHTML = "<p class='loading'>Erro ao carregar o catálogo. Confira o apps.json.</p>";
+    }
+}
+
+function openDetails(app) {
+    detailsIcon.src = app.icon;
+    detailsName.textContent = app.name;
+    detailsVersionText.textContent = "Versão mais atual • " + app.versionName;
+
+    detailsVersion.textContent = app.versionName;
+    detailsSize.textContent = app.size;
+
+    detailsDescription.textContent = app.description;
+    detailsChangelog.textContent = app.latestUpdateLog || "Sem changelog disponível.";
+    detailsAbout.textContent = app.aboutLog || app.about || "Sem informações adicionais.";
+    detailsDownload.href = app.apkUrl;
+
+    detailsPage.hidden = false;
+    document.body.classList.add("no-scroll");
+}
+
+function closeDetails() {
+    detailsPage.hidden = true;
+    document.body.classList.remove("no-scroll");
+}
+
+backButton.addEventListener("click", closeDetails);
+
+window.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeDetails();
+    }
+});
+
+loadApps();            icon.alt = app.name;
             icon.width = 68;
             icon.height = 68;
 
