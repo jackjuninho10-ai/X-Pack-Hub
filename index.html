@@ -3,38 +3,173 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>X Pack Hub</title>
+<title>StoreX Hub</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<div class="bg-glow"></div>
+
+<main class="container">
 
     <header class="header">
-        <img src="assets/storex.png" class="logo">
+        <img src="assets/storex.png" class="logo" alt="StoreX Hub">
 
         <div>
-            <h1>X Pack Hub</h1>
-            <p>Apps independentes para Android</p>
+            <h1>StoreX Hub</h1>
+            <p>Apps principais do X Pack para Android</p>
         </div>
     </header>
 
-    <div class="stats">
+    <section class="hero">
+        <h2>Catálogo oficial X Pack</h2>
+        <p>Baixe CamX, DnsX e XBattery diretamente pelo GitHub oficial.</p>
+    </section>
+
+    <section class="stats">
         <div class="stat-card">
-            <h2>3</h2>
+            <h3 id="appsCount">3</h3>
             <span>Apps principais</span>
         </div>
 
         <div class="stat-card">
-            <h2>Android</h2>
+            <h3>GitHub</h3>
             <span>Downloads oficiais</span>
         </div>
 
         <div class="stat-card">
-            <h2>GitHub</h2>
-            <span>Distribuição segura</span>
+            <h3>Android</h3>
+            <span>APK direto</span>
         </div>
+    </section>
+
+    <h2 class="section-title">Aplicativos</h2>
+
+    <section id="appsList" class="apps">
+        <p class="loading">Carregando catálogo...</p>
+    </section>
+
+    <footer>
+        <span>© 2026 StoreX Hub</span>
+        <span>Desenvolvido por Júnior</span>
+    </footer>
+
+</main>
+
+<div id="modal" class="modal">
+    <div class="modal-card">
+
+        <button id="closeModal" class="close-btn">×</button>
+
+        <div class="modal-header">
+            <img id="modalIcon" class="modal-icon" src="" alt="Ícone do app">
+
+            <div>
+                <h2 id="modalName"></h2>
+                <p id="modalVersion"></p>
+            </div>
+        </div>
+
+        <div class="modal-section">
+            <h3>Descrição</h3>
+            <p id="modalDescription"></p>
+        </div>
+
+        <div class="modal-section">
+            <h3>Última atualização</h3>
+            <pre id="modalChangelog"></pre>
+        </div>
+
+        <a id="modalDownload" class="download-btn" href="#" target="_blank">
+            Baixar APK
+        </a>
+
+    </div>
+</div>
+
+<script>
+const appsList = document.getElementById("appsList");
+const appsCount = document.getElementById("appsCount");
+
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+
+const modalIcon = document.getElementById("modalIcon");
+const modalName = document.getElementById("modalName");
+const modalVersion = document.getElementById("modalVersion");
+const modalDescription = document.getElementById("modalDescription");
+const modalChangelog = document.getElementById("modalChangelog");
+const modalDownload = document.getElementById("modalDownload");
+
+async function loadApps() {
+    try {
+        const response = await fetch("apps.json");
+        const apps = await response.json();
+
+        appsCount.textContent = apps.length;
+        appsList.innerHTML = "";
+
+        apps.forEach(app => {
+            const card = document.createElement("article");
+            card.className = "app-card";
+
+            card.innerHTML = `
+                <img src="${app.icon}" class="app-icon" alt="${app.name}">
+                <div class="app-info">
+                    <div class="app-top">
+                        <h3>${app.name}</h3>
+                        <span>${app.versionName}</span>
+                    </div>
+
+                    <p>${app.description}</p>
+
+                    <div class="app-meta">
+                        <span>${app.size}</span>
+                        <span>APK</span>
+                    </div>
+                </div>
+            `;
+
+            card.addEventListener("click", () => openModal(app));
+            appsList.appendChild(card);
+        });
+
+    } catch (error) {
+        appsList.innerHTML = `
+            <p class="loading">Erro ao carregar o catálogo. Verifique o apps.json.</p>
+        `;
+    }
+}
+
+function openModal(app) {
+    modalIcon.src = app.icon;
+    modalName.textContent = app.name;
+    modalVersion.textContent = `Versão mais atual: ${app.versionName} • ${app.size}`;
+    modalDescription.textContent = app.description;
+    modalChangelog.textContent = app.latestUpdateLog;
+    modalDownload.href = app.apkUrl;
+
+    modal.classList.add("show");
+}
+
+function closeAppModal() {
+    modal.classList.remove("show");
+}
+
+closeModal.addEventListener("click", closeAppModal);
+
+modal.addEventListener("click", event => {
+    if (event.target === modal) {
+        closeAppModal();
+    }
+});
+
+loadApps();
+</script>
+
+</body>
+</html>        </div>
     </div>
 
     <h2 class="section-title">Aplicativos</h2>
