@@ -6,7 +6,8 @@
     "icon": "assets/camx.png",
     "apkUrl": "https://raw.githubusercontent.com/jackjuninho10-ai/X-Pack-Hub/main/apks/CamX_v1.2.0.1.apk",
     "description": "Câmera alternativa do X Pack com Horizon Lock, perfis avançados e recursos experimentais.",
-    "latestUpdateLog": "CamX v1.2.0.1 — Perfis avançados e resoluções especiais\n\n• Novo menu flutuante de resoluções\n• Perfis Galaxy S avançados\n• Perfil Lite para tablets selecionados\n• Horizon Lock ajustado\n• Correção do áudio no Horizon Lock\n• Mais estabilidade ao trocar câmera e resolução"
+    "latestUpdateLog": "CamX v1.2.0.1 — Perfis avançados e resoluções especiais\n\n• Novo menu flutuante de resoluções\n• Perfis Galaxy S avançados\n• Perfil Lite para tablets selecionados\n• Banco separado de modelos selecionados\n• Melhor organização das resoluções por câmera\n• Horizon Lock ajustado para reduzir bordas pretas\n• Corrigido bug onde o Horizon Lock gravava sem áudio\n• Mais estabilidade ao trocar câmera e resolução\n• Resoluções especiais experimentais em aparelhos compatíveis",
+    "aboutLog": "CamX é a câmera alternativa do X Pack. O app foi criado para testar recursos avançados de foto e vídeo, como Horizon Lock, perfis por aparelho, resoluções experimentais e uma interface própria. O foco do CamX é liberar mais controle, testar capacidades reais da câmera e evoluir rapidamente com base nos aparelhos compatíveis."
   },
   {
     "name": "DnsX",
@@ -15,7 +16,8 @@
     "icon": "assets/dnsx.png",
     "apkUrl": "https://raw.githubusercontent.com/jackjuninho10-ai/X-Pack-Hub/main/apks/DnsX_v2.2.apk",
     "description": "Scanner DNS inteligente com VPN local, testes de rede e foco em estabilidade.",
-    "latestUpdateLog": "DnsX v2.2 — Atualização Inteligência de Rede\n\n• Melhorias no scanner DNS\n• Ranking inteligente\n• Perfis por rede\n• Monitor DNS\n• Melhor estabilidade em Wi-Fi e dados móveis"
+    "latestUpdateLog": "DnsX v2.2 — Atualização Inteligência de Rede\n\n• Melhorias no scanner DNS\n• Ranking inteligente de DNS\n• Perfis por rede\n• Monitor DNS\n• Melhor resposta ao testar servidores\n• Ajustes na VPN local\n• Melhor estabilidade em Wi-Fi e dados móveis\n• Melhor compatibilidade com diferentes operadoras\n• Correções internas e melhorias gerais",
+    "aboutLog": "DnsX é o app de rede do X Pack. Ele ajuda a testar DNS, comparar estabilidade, usar VPN local e melhorar a experiência em jogos, navegação e uso diário. O app é focado em reduzir instabilidade, organizar perfis de DNS e facilitar testes rápidos de rede. Para a VPN funcionar melhor, deixe o DNS privado do Android desligado ou automático."
   },
   {
     "name": "XBattery",
@@ -24,6 +26,7 @@
     "icon": "assets/xbattery.png",
     "apkUrl": "https://raw.githubusercontent.com/jackjuninho10-ai/X-Pack-Hub/main/apks/XBattery_v2.0.1.apk",
     "description": "Monitor avançado de bateria com Shizuku, saúde, ciclos, temperatura e potência.",
-    "latestUpdateLog": "XBattery v2.0.1 — Correções, Modo Advanced e modo paisagem\n\n• Atualização de dados aprimorada\n• Modo Advanced com ciclos decimais\n• Suporte ao modo paisagem\n• Melhor alinhamento dos cards\n• Melhor estabilidade geral"
+    "latestUpdateLog": "XBattery v2.0.1 — Correções, Modo Advanced e modo paisagem\n\n• Atualização de dados aprimorada\n• Melhor compatibilidade com diferentes dispositivos Android\n• Modo Advanced desbloqueável com 5 toques no nome XBattery\n• Modo Advanced com ciclos decimais\n• Suporte ao modo paisagem\n• Melhor aproveitamento do espaço em tablets e telas maiores\n• Cards reorganizados automaticamente\n• Melhor alinhamento dos cards\n• Refinamentos visuais e melhorias de espaçamento\n• Melhor estabilidade geral",
+    "aboutLog": "XBattery é o monitor avançado de bateria do X Pack. Ele mostra nível, temperatura, voltagem, potência em watts, estado, saúde, ciclos, primeiro uso e fabricação da bateria. Em dispositivos compatíveis, usa Shizuku para acessar dados internos do sistema e entregar informações mais completas."
   }
 ]
