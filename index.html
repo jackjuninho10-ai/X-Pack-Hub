@@ -4,107 +4,531 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StoreX Hub</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top right, rgba(0, 90, 255, 0.28), transparent 35%),
+        linear-gradient(180deg, #061536 0%, #020815 42%, #000000 100%);
+    color: white;
+}
+
+.page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 0 24px rgba(0, 110, 255, 0.5);
+}
+
+.title h1 {
+    font-size: 30px;
+    letter-spacing: -1px;
+}
+
+.title p {
+    margin-top: 3px;
+    color: #9fbaff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.hero {
+    background:
+        linear-gradient(135deg, rgba(24, 90, 210, 0.45), rgba(0, 0, 0, 0.4));
+    border: 1px solid rgba(93, 154, 255, 0.28);
+    border-radius: 26px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.hero p {
+    color: #c5d8ff;
+    line-height: 1.45;
+    font-size: 14px;
+}
+
+.store-stats {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.stat {
+    flex: 1;
+    background: rgba(5, 20, 52, 0.85);
+    border: 1px solid rgba(90, 150, 255, 0.22);
+    border-radius: 20px;
+    padding: 13px 10px;
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    color: #67adff;
+    font-size: 18px;
+}
+
+.stat span {
+    display: block;
+    margin-top: 4px;
+    color: #adc4ff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.section-title {
+    font-size: 20px;
+    margin: 8px 0 12px;
+}
+
+.apps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.app-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 96px;
+    padding: 14px;
+    border-radius: 24px;
+    cursor: pointer;
+    background:
+        linear-gradient(135deg, rgba(4, 14, 35, 0.96), rgba(8, 29, 70, 0.88));
+    border: 1px solid rgba(86, 145, 255, 0.22);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
+    transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.app-card:active {
+    transform: scale(0.98);
+    border-color: rgba(90, 170, 255, 0.75);
+}
+
+.app-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 19px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.app-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.app-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-row h3 {
+    font-size: 21px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.version {
+    flex-shrink: 0;
+    color: #7db8ff;
+    background: rgba(30, 110, 255, 0.14);
+    border: 1px solid rgba(80, 150, 255, 0.22);
+    border-radius: 999px;
+    padding: 5px 9px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.desc {
+    color: #b8caff;
+    font-size: 13px;
+    margin: 5px 0 9px;
+    line-height: 1.35;
+}
+
+.meta {
+    display: flex;
+    gap: 8px;
+}
+
+.meta span {
+    color: #e5efff;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 999px;
+    padding: 5px 9px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.footer {
+    margin: 28px 0 14px;
+    text-align: center;
+    color: #819ddd;
+    font-size: 13px;
+}
+
+/* DETALHES ESTILO STOREX */
+
+.details-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background:
+        radial-gradient(circle at top right, rgba(0, 95, 255, 0.24), transparent 35%),
+        linear-gradient(180deg, #061536 0%, #020815 45%, #000000 100%);
+    display: none;
+    overflow-y: auto;
+}
+
+.details-screen.show {
+    display: block;
+}
+
+.details-content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px;
+}
+
+.details-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.back-btn {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.details-title {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.details-card {
+    background:
+        linear-gradient(150deg, rgba(5, 18, 45, 0.98), rgba(6, 30, 78, 0.88));
+    border: 1px solid rgba(90, 155, 255, 0.28);
+    border-radius: 28px;
+    padding: 18px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.42);
+}
+
+.details-header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.details-icon {
+    width: 92px;
+    height: 92px;
+    border-radius: 26px;
+    object-fit: cover;
+    box-shadow: 0 0 26px rgba(0, 120, 255, 0.32);
+}
+
+.details-name h2 {
+    font-size: 29px;
+}
+
+.details-name p {
+    color: #9dbdff;
+    font-weight: 800;
+    margin-top: 5px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(120, 170, 255, 0.13);
+    border-radius: 18px;
+    padding: 12px;
+}
+
+.info-box span {
+    display: block;
+    color: #8fb6ff;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.info-box strong {
+    font-size: 15px;
+}
+
+.details-section {
+    margin-top: 16px;
+}
+
+.details-section h3 {
+    color: #69afff;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.details-section p,
+.details-section pre {
+    color: #dbe8ff;
+    line-height: 1.55;
+    font-size: 14px;
+}
+
+.details-section pre {
+    white-space: pre-wrap;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(120, 170, 255, 0.13);
+    border-radius: 18px;
+    padding: 13px;
+}
+
+.download-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #1680ff, #004ed6);
+    border-radius: 19px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 900;
+    box-shadow: 0 12px 30px rgba(0, 100, 255, 0.35);
+}
+
+.download-btn:active {
+    transform: scale(0.98);
+}
+
+.loading {
+    text-align: center;
+    color: #b9ccff;
+    padding: 22px;
+}
+
+@media (max-width: 520px) {
+    .page,
+    .details-content {
+        padding: 14px;
+    }
+
+    .title h1 {
+        font-size: 27px;
+    }
+
+    .logo {
+        width: 58px;
+        height: 58px;
+    }
+
+    .hero {
+        border-radius: 22px;
+    }
+
+    .app-card {
+        border-radius: 22px;
+        padding: 13px;
+    }
+
+    .app-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+    }
+
+    .app-row h3 {
+        font-size: 19px;
+    }
+
+    .details-header {
+        align-items: flex-start;
+    }
+
+    .details-icon {
+        width: 82px;
+        height: 82px;
+        border-radius: 23px;
+    }
+
+    .details-name h2 {
+        font-size: 25px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<div class="bg-glow"></div>
+<main class="page" id="homePage">
 
-<main class="container">
-
-    <header class="header">
+    <header class="topbar">
         <img src="assets/storex.png" class="logo" alt="StoreX Hub">
-
-        <div>
+        <div class="title">
             <h1>StoreX Hub</h1>
-            <p>Apps principais do X Pack para Android</p>
+            <p>Apps principais do X Pack</p>
         </div>
     </header>
 
     <section class="hero">
-        <h2>Catálogo oficial X Pack</h2>
-        <p>Baixe CamX, DnsX e XBattery diretamente pelo GitHub oficial.</p>
+        <h2>Catálogo oficial</h2>
+        <p>Baixe os apps principais do X Pack pelo GitHub oficial, sem instalador interno e com menos risco de bloqueio.</p>
     </section>
 
-    <section class="stats">
-        <div class="stat-card">
-            <h3 id="appsCount">3</h3>
-            <span>Apps principais</span>
+    <section class="store-stats">
+        <div class="stat">
+            <strong id="appsCount">3</strong>
+            <span>Apps</span>
         </div>
 
-        <div class="stat-card">
-            <h3>GitHub</h3>
-            <span>Downloads oficiais</span>
+        <div class="stat">
+            <strong>GitHub</strong>
+            <span>Fonte oficial</span>
         </div>
 
-        <div class="stat-card">
-            <h3>Android</h3>
-            <span>APK direto</span>
+        <div class="stat">
+            <strong>APK</strong>
+            <span>Android</span>
         </div>
     </section>
 
     <h2 class="section-title">Aplicativos</h2>
 
-    <section id="appsList" class="apps">
+    <section class="apps" id="appsList">
         <p class="loading">Carregando catálogo...</p>
     </section>
 
-    <footer>
-        <span>© 2026 StoreX Hub</span>
-        <span>Desenvolvido por Júnior</span>
+    <footer class="footer">
+        © 2026 StoreX Hub<br>
+        Desenvolvido por Júnior
     </footer>
 
 </main>
 
-<div id="modal" class="modal">
-    <div class="modal-card">
+<section class="details-screen" id="detailsScreen">
+    <div class="details-content">
 
-        <button id="closeModal" class="close-btn">×</button>
+        <div class="details-top">
+            <button class="back-btn" id="backBtn">‹</button>
+            <div class="details-title">Detalhes do app</div>
+        </div>
 
-        <div class="modal-header">
-            <img id="modalIcon" class="modal-icon" src="" alt="Ícone do app">
+        <article class="details-card">
+            <div class="details-header">
+                <img id="detailsIcon" class="details-icon" src="" alt="Ícone">
 
-            <div>
-                <h2 id="modalName"></h2>
-                <p id="modalVersion"></p>
+                <div class="details-name">
+                    <h2 id="detailsName">App</h2>
+                    <p id="detailsSubtitle">Versão mais atual</p>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-section">
-            <h3>Descrição</h3>
-            <p id="modalDescription"></p>
-        </div>
+            <div class="info-grid">
+                <div class="info-box">
+                    <span>VERSÃO MAIS ATUAL</span>
+                    <strong id="detailsVersion">--</strong>
+                </div>
 
-        <div class="modal-section">
-            <h3>Última atualização</h3>
-            <pre id="modalChangelog"></pre>
-        </div>
+                <div class="info-box">
+                    <span>TAMANHO</span>
+                    <strong id="detailsSize">--</strong>
+                </div>
+            </div>
 
-        <a id="modalDownload" class="download-btn" href="#" target="_blank">
-            Baixar APK
-        </a>
+            <div class="details-section">
+                <h3>Descrição</h3>
+                <p id="detailsDescription"></p>
+            </div>
+
+            <div class="details-section">
+                <h3>Última atualização</h3>
+                <pre id="detailsChangelog"></pre>
+            </div>
+
+            <div class="details-section">
+                <h3>Sobre o app</h3>
+                <p id="detailsAbout"></p>
+            </div>
+
+            <a id="detailsDownload" class="download-btn" href="#" target="_blank">
+                Baixar APK
+            </a>
+        </article>
 
     </div>
-</div>
+</section>
 
 <script>
 const appsList = document.getElementById("appsList");
 const appsCount = document.getElementById("appsCount");
 
-const modal = document.getElementById("modal");
-const closeModal = document.getElementById("closeModal");
+const detailsScreen = document.getElementById("detailsScreen");
+const backBtn = document.getElementById("backBtn");
 
-const modalIcon = document.getElementById("modalIcon");
-const modalName = document.getElementById("modalName");
-const modalVersion = document.getElementById("modalVersion");
-const modalDescription = document.getElementById("modalDescription");
-const modalChangelog = document.getElementById("modalChangelog");
-const modalDownload = document.getElementById("modalDownload");
+const detailsIcon = document.getElementById("detailsIcon");
+const detailsName = document.getElementById("detailsName");
+const detailsSubtitle = document.getElementById("detailsSubtitle");
+const detailsVersion = document.getElementById("detailsVersion");
+const detailsSize = document.getElementById("detailsSize");
+const detailsDescription = document.getElementById("detailsDescription");
+const detailsChangelog = document.getElementById("detailsChangelog");
+const detailsAbout = document.getElementById("detailsAbout");
+const detailsDownload = document.getElementById("detailsDownload");
 
 async function loadApps() {
     try {
-        const response = await fetch("apps.json");
+        const response = await fetch("apps.json?v=" + Date.now());
         const apps = await response.json();
 
         appsCount.textContent = apps.length;
@@ -116,252 +540,58 @@ async function loadApps() {
 
             card.innerHTML = `
                 <img src="${app.icon}" class="app-icon" alt="${app.name}">
-                <div class="app-info">
-                    <div class="app-top">
+                <div class="app-main">
+                    <div class="app-row">
                         <h3>${app.name}</h3>
-                        <span>${app.versionName}</span>
+                        <span class="version">${app.versionName}</span>
                     </div>
-
-                    <p>${app.description}</p>
-
-                    <div class="app-meta">
+                    <p class="desc">${app.description}</p>
+                    <div class="meta">
                         <span>${app.size}</span>
                         <span>APK</span>
                     </div>
                 </div>
             `;
 
-            card.addEventListener("click", () => openModal(app));
+            card.addEventListener("click", () => openDetails(app));
             appsList.appendChild(card);
         });
 
-    } catch (error) {
-        appsList.innerHTML = `
-            <p class="loading">Erro ao carregar o catálogo. Verifique o apps.json.</p>
-        `;
+    } catch (e) {
+        appsList.innerHTML = "<p class='loading'>Erro ao carregar apps.json</p>";
     }
 }
 
-function openModal(app) {
-    modalIcon.src = app.icon;
-    modalName.textContent = app.name;
-    modalVersion.textContent = `Versão mais atual: ${app.versionName} • ${app.size}`;
-    modalDescription.textContent = app.description;
-    modalChangelog.textContent = app.latestUpdateLog;
-    modalDownload.href = app.apkUrl;
+function openDetails(app) {
+    detailsIcon.src = app.icon;
+    detailsName.textContent = app.name;
+    detailsSubtitle.textContent = "Versão mais atual • " + app.versionName;
+    detailsVersion.textContent = app.versionName;
+    detailsSize.textContent = app.size;
+    detailsDescription.textContent = app.description;
+    detailsChangelog.textContent = app.latestUpdateLog || "Sem changelog disponível.";
+    detailsAbout.textContent = app.aboutLog || app.about || "Sem log geral disponível.";
+    detailsDownload.href = app.apkUrl;
 
-    modal.classList.add("show");
+    detailsScreen.classList.add("show");
+    document.body.style.overflow = "hidden";
 }
 
-function closeAppModal() {
-    modal.classList.remove("show");
+function closeDetails() {
+    detailsScreen.classList.remove("show");
+    document.body.style.overflow = "";
 }
 
-closeModal.addEventListener("click", closeAppModal);
+backBtn.addEventListener("click", closeDetails);
 
-modal.addEventListener("click", event => {
-    if (event.target === modal) {
-        closeAppModal();
+window.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeDetails();
     }
 });
 
 loadApps();
 </script>
-
-</body>
-</html>        </div>
-    </div>
-
-    <h2 class="section-title">Aplicativos</h2>
-
-    <div class="apps">
-
-        <div class="app-card">
-            <img src="assets/camx.png" class="app-icon">
-
-            <div class="app-info">
-                <h3>CamX</h3>
-                <span class="version">v1.2.0.1</span>
-
-                <p>
-                    Câmera alternativa com Horizon Lock, perfis avançados por aparelho
-                    e resoluções experimentais.
-                </p>
-
-                <div class="buttons">
-                    <a href="https://github.com/jackjuninho10-ai/StoreX-Repo/releases/download/camx-v1.2.0.1/CamX_v1.2.0.1.apk" class="btn">
-                        Baixar APK
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="app-card">
-            <img src="assets/dnsx.png" class="app-icon">
-
-            <div class="app-info">
-                <h3>DnsX</h3>
-                <span class="version">v2.2</span>
-
-                <p>
-                    Scanner DNS inteligente com VPN local, testes de rede,
-                    estabilidade e foco em jogos.
-                </p>
-
-                <div class="buttons">
-                    <a href="https://github.com/jackjuninho10-ai/StoreX-Repo/releases/download/dnsx-v2.2/DnsX_v2.2.apk" class="btn">
-                        Baixar APK
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="app-card">
-            <img src="assets/xbattery.png" class="app-icon">
-
-            <div class="app-info">
-                <h3>XBattery</h3>
-                <span class="version">v2.0.1</span>
-
-                <p>
-                    Monitor avançado de bateria com Shizuku, saúde, ciclos,
-                    temperatura, voltagem e potência.
-                </p>
-
-                <div class="buttons">
-                    <a href="https://github.com/jackjuninho10-ai/StoreX-Repo/releases/download/xbattery-v2.0.1/XBattery_v2.0.1.apk" class="btn">
-                        Baixar APK
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
-        © 2026 X Pack<br>
-        Desenvolvido por Júnior
-    </footer>
-
-</div>
-
-</body>
-</html>        <div class="stat-card">
-            <h2>GitHub</h2>
-            <span>Downloads Oficiais</span>
-        </div>
-    </div>
-
-    <h2 class="section-title">Aplicativos</h2>
-
-    <div class="apps">
-
-        <!-- CAMX -->
-
-        <div class="app-card">
-
-            <img src="assets/camx.png" class="app-icon">
-
-            <div class="app-info">
-
-                <h3>CamX</h3>
-
-                <p>
-                    Câmera alternativa com Horizon Lock,
-                    vídeo avançado e recursos experimentais.
-                </p>
-
-                <div class="buttons">
-
-                    <a href="LINK_CAMX_APK" class="btn">
-                        Baixar APK
-                    </a>
-
-                    <a href="#" class="btn-outline">
-                        Changelog
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- DNSX -->
-
-        <div class="app-card">
-
-            <img src="assets/dnsx.png" class="app-icon">
-
-            <div class="app-info">
-
-                <h3>DnsX</h3>
-
-                <p>
-                    Scanner DNS inteligente com VPN local,
-                    testes e monitoramento de rede.
-                </p>
-
-                <div class="buttons">
-
-                    <a href="LINK_DNSX_APK" class="btn">
-                        Baixar APK
-                    </a>
-
-                    <a href="#" class="btn-outline">
-                        Changelog
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- XBATTERY -->
-
-        <div class="app-card">
-
-            <img src="assets/xbattery.png" class="app-icon">
-
-            <div class="app-info">
-
-                <h3>XBattery</h3>
-
-                <p>
-                    Monitor avançado de bateria com
-                    Shizuku, saúde, ciclos e potência.
-                </p>
-
-                <div class="buttons">
-
-                    <a href="LINK_XBATTERY_APK" class="btn">
-                        Baixar APK
-                    </a>
-
-                    <a href="#" class="btn-outline">
-                        Changelog
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <footer>
-
-        © 2026 X Pack
-
-        <br><br>
-
-        Desenvolvido por Júnior
-
-    </footer>
-
-</div>
 
 </body>
 </html>
