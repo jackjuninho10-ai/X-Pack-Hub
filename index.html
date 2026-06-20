@@ -32,43 +32,45 @@ body.no-scroll {
     overflow: hidden;
 }
 
-.page {
+.sx-page {
     width: 100%;
     max-width: 760px;
     margin: 0 auto;
     padding: 16px;
 }
 
-.topbar {
+.sx-topbar {
     display: flex;
     align-items: center;
     gap: 14px;
     margin-bottom: 18px;
 }
 
-.store-logo {
+.sx-store-logo {
     width: 62px;
     height: 62px;
+    max-width: 62px;
+    max-height: 62px;
     border-radius: 18px;
     object-fit: cover;
     flex-shrink: 0;
     box-shadow: 0 0 24px rgba(0, 120, 255, 0.45);
 }
 
-.topbar h1 {
+.sx-topbar h1 {
     font-size: 30px;
     line-height: 1;
     letter-spacing: -0.8px;
 }
 
-.topbar p {
+.sx-topbar p {
     margin-top: 5px;
     color: #a8c2ff;
     font-size: 14px;
     font-weight: 700;
 }
 
-.hero-card {
+.sx-hero-card {
     padding: 18px;
     margin-bottom: 16px;
     border-radius: 24px;
@@ -77,25 +79,25 @@ body.no-scroll {
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
 }
 
-.hero-card h2 {
+.sx-hero-card h2 {
     font-size: 22px;
     margin-bottom: 6px;
 }
 
-.hero-card p {
+.sx-hero-card p {
     color: #c9d9ff;
     font-size: 14px;
     line-height: 1.45;
 }
 
-.stats-row {
+.sx-stats-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-bottom: 18px;
 }
 
-.stat-card {
+.sx-stat-card {
     text-align: center;
     padding: 13px 8px;
     border-radius: 20px;
@@ -103,13 +105,13 @@ body.no-scroll {
     border: 1px solid rgba(95, 155, 255, 0.22);
 }
 
-.stat-card strong {
+.sx-stat-card strong {
     display: block;
     color: #67adff;
     font-size: 17px;
 }
 
-.stat-card span {
+.sx-stat-card span {
     display: block;
     margin-top: 4px;
     color: #aec5ff;
@@ -117,18 +119,18 @@ body.no-scroll {
     font-weight: 700;
 }
 
-.section-title {
+.sx-section-title {
     margin: 8px 0 12px;
     font-size: 20px;
 }
 
-.apps-list {
+.sx-apps-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.app-card {
+.sx-app-card {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -141,39 +143,41 @@ body.no-scroll {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
 }
 
-.app-card:active {
+.sx-app-card:active {
     transform: scale(0.985);
     border-color: rgba(105, 170, 255, 0.72);
 }
 
-.app-icon {
+.sx-app-icon {
     width: 68px;
     height: 68px;
+    max-width: 68px;
+    max-height: 68px;
     border-radius: 19px;
     object-fit: cover;
     flex-shrink: 0;
 }
 
-.app-content {
+.sx-app-content {
     flex: 1;
     min-width: 0;
 }
 
-.app-top {
+.sx-app-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
 }
 
-.app-top h3 {
+.sx-app-top h3 {
     font-size: 21px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.app-version {
+.sx-app-version {
     flex-shrink: 0;
     color: #82bbff;
     font-size: 12px;
@@ -184,19 +188,19 @@ body.no-scroll {
     border: 1px solid rgba(92, 155, 255, 0.22);
 }
 
-.app-description {
+.sx-app-description {
     margin: 5px 0 9px;
     color: #b9cbff;
     font-size: 13px;
     line-height: 1.35;
 }
 
-.app-meta {
+.sx-app-meta {
     display: flex;
     gap: 8px;
 }
 
-.app-meta span {
+.sx-app-meta span {
     color: #e4eeff;
     font-size: 12px;
     font-weight: 700;
@@ -205,7 +209,7 @@ body.no-scroll {
     background: rgba(255, 255, 255, 0.075);
 }
 
-.footer {
+.sx-footer {
     margin: 30px 0 14px;
     text-align: center;
     color: #819ddd;
@@ -213,13 +217,13 @@ body.no-scroll {
     line-height: 1.6;
 }
 
-.loading {
+.sx-loading {
     padding: 24px;
     text-align: center;
     color: #bbceff;
 }
 
-.details-page {
+.sx-details-page {
     position: fixed;
     inset: 0;
     z-index: 999;
@@ -229,21 +233,21 @@ body.no-scroll {
         linear-gradient(180deg, #061636 0%, #020814 48%, #000000 100%);
 }
 
-.details-container {
+.sx-details-container {
     width: 100%;
     max-width: 760px;
     margin: 0 auto;
     padding: 16px;
 }
 
-.details-topbar {
+.sx-details-topbar {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 16px;
 }
 
-.back-button {
+.sx-back-button {
     width: 44px;
     height: 44px;
     border: none;
@@ -255,11 +259,11 @@ body.no-scroll {
     cursor: pointer;
 }
 
-.details-topbar h2 {
+.sx-details-topbar h2 {
     font-size: 22px;
 }
 
-.details-card {
+.sx-details-card {
     padding: 18px;
     border-radius: 28px;
     background: linear-gradient(150deg, rgba(5, 18, 45, 0.98), rgba(5, 31, 86, 0.88));
@@ -267,48 +271,50 @@ body.no-scroll {
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
 }
 
-.details-header {
+.sx-details-header {
     display: flex;
     align-items: center;
     gap: 16px;
     margin-bottom: 18px;
 }
 
-.details-icon {
+.sx-details-icon {
     width: 92px;
     height: 92px;
+    max-width: 92px;
+    max-height: 92px;
     border-radius: 26px;
     object-fit: cover;
     flex-shrink: 0;
     box-shadow: 0 0 26px rgba(0, 120, 255, 0.32);
 }
 
-.details-header h1 {
+.sx-details-header h1 {
     font-size: 29px;
 }
 
-.details-header p {
+.sx-details-header p {
     margin-top: 5px;
     color: #9ebdff;
     font-size: 14px;
     font-weight: 800;
 }
 
-.details-info-grid {
+.sx-details-info-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin-bottom: 18px;
 }
 
-.details-info-box {
+.sx-details-info-box {
     padding: 12px;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.055);
     border: 1px solid rgba(120, 170, 255, 0.13);
 }
 
-.details-info-box span {
+.sx-details-info-box span {
     display: block;
     margin-bottom: 5px;
     color: #8fb6ff;
@@ -316,27 +322,27 @@ body.no-scroll {
     font-weight: 900;
 }
 
-.details-info-box strong {
+.sx-details-info-box strong {
     font-size: 15px;
 }
 
-.details-section {
+.sx-details-section {
     margin-top: 16px;
 }
 
-.details-section h3 {
+.sx-details-section h3 {
     margin-bottom: 8px;
     color: #69afff;
     font-size: 17px;
 }
 
-.details-section p {
+.sx-details-section p {
     color: #dbe8ff;
     font-size: 14px;
     line-height: 1.55;
 }
 
-.details-section pre {
+.sx-details-section pre {
     white-space: pre-wrap;
     color: #dbe8ff;
     font-size: 14px;
@@ -347,7 +353,7 @@ body.no-scroll {
     border: 1px solid rgba(120, 170, 255, 0.13);
 }
 
-.download-button {
+.sx-download-button {
     display: block;
     width: 100%;
     margin-top: 20px;
@@ -363,43 +369,49 @@ body.no-scroll {
 }
 
 @media (max-width: 520px) {
-    .page,
-    .details-container {
+    .sx-page,
+    .sx-details-container {
         padding: 14px;
     }
 
-    .store-logo {
+    .sx-store-logo {
         width: 58px;
         height: 58px;
+        max-width: 58px;
+        max-height: 58px;
         border-radius: 17px;
     }
 
-    .topbar h1 {
+    .sx-topbar h1 {
         font-size: 27px;
     }
 
-    .app-card {
+    .sx-app-card {
         border-radius: 22px;
         padding: 13px;
     }
 
-    .app-icon {
+    .sx-app-icon {
         width: 64px;
         height: 64px;
+        max-width: 64px;
+        max-height: 64px;
         border-radius: 18px;
     }
 
-    .app-top h3 {
+    .sx-app-top h3 {
         font-size: 19px;
     }
 
-    .details-icon {
+    .sx-details-icon {
         width: 82px;
         height: 82px;
+        max-width: 82px;
+        max-height: 82px;
         border-radius: 23px;
     }
 
-    .details-header h1 {
+    .sx-details-header h1 {
         font-size: 25px;
     }
 }
@@ -408,9 +420,10 @@ body.no-scroll {
 
 <body>
 
-<main class="page">
-    <header class="topbar">
-        <img src="assets/storex.png" class="store-logo" alt="StoreX Hub">
+<main id="storexHome" class="sx-page">
+
+    <header class="sx-topbar">
+        <img src="assets/storex.png" class="sx-store-logo" alt="StoreX Hub">
 
         <div>
             <h1>StoreX Hub</h1>
@@ -418,7 +431,7 @@ body.no-scroll {
         </div>
     </header>
 
-    <section class="hero-card">
+    <section class="sx-hero-card">
         <h2>Catálogo oficial</h2>
         <p>
             Baixe os apps principais do X Pack pelo GitHub oficial,
@@ -426,33 +439,34 @@ body.no-scroll {
         </p>
     </section>
 
-    <section class="stats-row">
-        <div class="stat-card">
+    <section class="sx-stats-row">
+        <div class="sx-stat-card">
             <strong id="appsCount">3</strong>
             <span>Apps</span>
         </div>
 
-        <div class="stat-card">
+        <div class="sx-stat-card">
             <strong>GitHub</strong>
             <span>Fonte oficial</span>
         </div>
 
-        <div class="stat-card">
+        <div class="sx-stat-card">
             <strong>APK</strong>
             <span>Android</span>
         </div>
     </section>
 
-    <h2 class="section-title">Aplicativos</h2>
+    <h2 class="sx-section-title">Aplicativos</h2>
 
-    <section id="appsList" class="apps-list">
-        <p class="loading">Carregando catálogo...</p>
+    <section id="appsList" class="sx-apps-list">
+        <p class="sx-loading">Carregando catálogo...</p>
     </section>
 
-    <footer class="footer">
+    <footer class="sx-footer">
         © 2026 StoreX Hub<br>
         Desenvolvido por Júnior
     </footer>
+
 </main>
 
 <div id="detailsHost"></div>
@@ -462,7 +476,28 @@ const appsList = document.getElementById("appsList");
 const appsCount = document.getElementById("appsCount");
 const detailsHost = document.getElementById("detailsHost");
 
+function cleanOldContent() {
+    Array.from(document.body.childNodes).forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== "") {
+            node.remove();
+        }
+
+        if (node.nodeType === Node.ELEMENT_NODE) {
+            const id = node.id;
+            const tag = node.tagName.toLowerCase();
+
+            if (id === "storexHome" || id === "detailsHost" || tag === "script") {
+                return;
+            }
+
+            node.remove();
+        }
+    });
+}
+
 async function loadApps() {
+    cleanOldContent();
+
     try {
         const response = await fetch("apps.json?v=" + Date.now());
 
@@ -478,35 +513,35 @@ async function loadApps() {
 
         apps.forEach(app => {
             const card = document.createElement("article");
-            card.className = "app-card";
+            card.className = "sx-app-card";
 
             const icon = document.createElement("img");
-            icon.className = "app-icon";
+            icon.className = "sx-app-icon";
             icon.src = app.icon;
             icon.alt = app.name;
 
             const content = document.createElement("div");
-            content.className = "app-content";
+            content.className = "sx-app-content";
 
             const top = document.createElement("div");
-            top.className = "app-top";
+            top.className = "sx-app-top";
 
             const name = document.createElement("h3");
             name.textContent = app.name;
 
             const version = document.createElement("span");
-            version.className = "app-version";
+            version.className = "sx-app-version";
             version.textContent = app.versionName;
 
             top.appendChild(name);
             top.appendChild(version);
 
             const desc = document.createElement("p");
-            desc.className = "app-description";
+            desc.className = "sx-app-description";
             desc.textContent = app.description;
 
             const meta = document.createElement("div");
-            meta.className = "app-meta";
+            meta.className = "sx-app-meta";
 
             const size = document.createElement("span");
             size.textContent = app.size;
@@ -530,7 +565,7 @@ async function loadApps() {
         });
 
     } catch (error) {
-        appsList.innerHTML = "<p class='loading'>Erro ao carregar o catálogo. Confira o apps.json.</p>";
+        appsList.innerHTML = "<p class='sx-loading'>Erro ao carregar o catálogo. Confira o apps.json.</p>";
     }
 }
 
@@ -538,16 +573,16 @@ function openDetails(app) {
     detailsHost.innerHTML = "";
 
     const detailsPage = document.createElement("section");
-    detailsPage.className = "details-page";
+    detailsPage.className = "sx-details-page";
 
     const container = document.createElement("div");
-    container.className = "details-container";
+    container.className = "sx-details-container";
 
     const topbar = document.createElement("header");
-    topbar.className = "details-topbar";
+    topbar.className = "sx-details-topbar";
 
     const back = document.createElement("button");
-    back.className = "back-button";
+    back.className = "sx-back-button";
     back.textContent = "‹";
     back.addEventListener("click", closeDetails);
 
@@ -558,13 +593,13 @@ function openDetails(app) {
     topbar.appendChild(title);
 
     const card = document.createElement("article");
-    card.className = "details-card";
+    card.className = "sx-details-card";
 
     const header = document.createElement("div");
-    header.className = "details-header";
+    header.className = "sx-details-header";
 
     const icon = document.createElement("img");
-    icon.className = "details-icon";
+    icon.className = "sx-details-icon";
     icon.src = app.icon;
     icon.alt = app.name;
 
@@ -583,35 +618,28 @@ function openDetails(app) {
     header.appendChild(nameBox);
 
     const infoGrid = document.createElement("div");
-    infoGrid.className = "details-info-grid";
+    infoGrid.className = "sx-details-info-grid";
 
-    const versionBox = createInfoBox("VERSÃO MAIS ATUAL", app.versionName);
-    const sizeBox = createInfoBox("TAMANHO", app.size);
+    infoGrid.appendChild(createInfoBox("VERSÃO MAIS ATUAL", app.versionName));
+    infoGrid.appendChild(createInfoBox("TAMANHO", app.size));
 
-    infoGrid.appendChild(versionBox);
-    infoGrid.appendChild(sizeBox);
-
-    const description = createTextSection("Descrição", app.description || "Sem descrição disponível.");
-    const changelog = createPreSection("Última atualização", app.latestUpdateLog || "Sem changelog disponível.");
-    const about = createTextSection("Sobre o app", app.aboutLog || app.about || "Sem informações adicionais.");
+    card.appendChild(header);
+    card.appendChild(infoGrid);
+    card.appendChild(createTextSection("Descrição", app.description || "Sem descrição disponível."));
+    card.appendChild(createPreSection("Última atualização", app.latestUpdateLog || "Sem changelog disponível."));
+    card.appendChild(createTextSection("Sobre o app", app.aboutLog || app.about || "Sem informações adicionais."));
 
     const download = document.createElement("a");
-    download.className = "download-button";
+    download.className = "sx-download-button";
     download.href = app.apkUrl;
     download.target = "_blank";
     download.rel = "noopener noreferrer";
     download.textContent = "Baixar APK";
 
-    card.appendChild(header);
-    card.appendChild(infoGrid);
-    card.appendChild(description);
-    card.appendChild(changelog);
-    card.appendChild(about);
     card.appendChild(download);
 
     container.appendChild(topbar);
     container.appendChild(card);
-
     detailsPage.appendChild(container);
     detailsHost.appendChild(detailsPage);
 
@@ -620,7 +648,7 @@ function openDetails(app) {
 
 function createInfoBox(labelText, valueText) {
     const box = document.createElement("div");
-    box.className = "details-info-box";
+    box.className = "sx-details-info-box";
 
     const label = document.createElement("span");
     label.textContent = labelText;
@@ -636,7 +664,7 @@ function createInfoBox(labelText, valueText) {
 
 function createTextSection(titleText, text) {
     const section = document.createElement("section");
-    section.className = "details-section";
+    section.className = "sx-details-section";
 
     const title = document.createElement("h3");
     title.textContent = titleText;
@@ -652,7 +680,7 @@ function createTextSection(titleText, text) {
 
 function createPreSection(titleText, text) {
     const section = document.createElement("section");
-    section.className = "details-section";
+    section.className = "sx-details-section";
 
     const title = document.createElement("h3");
     title.textContent = titleText;
@@ -670,1809 +698,6 @@ function closeDetails() {
     detailsHost.innerHTML = "";
     document.body.classList.remove("no-scroll");
 }
-
-window.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-        closeDetails();
-    }
-});
-
-loadApps();
-</script>
-
-</body>
-</html>
-        <div class="stat-card">
-            <strong>GitHub</strong>
-            <span>Fonte oficial</span>
-        </div>
-
-        <div class="stat-card">
-            <strong>APK</strong>
-            <span>Android</span>
-        </div>
-    </section>
-
-    <h2 class="section-title">Aplicativos</h2>
-
-    <section id="appsList" class="apps-list">
-        <p class="loading">Carregando catálogo...</p>
-    </section>
-
-    <footer class="footer">
-        © 2026 StoreX Hub<br>
-        Desenvolvido por Júnior
-    </footer>
-
-</main>
-
-<div id="detailsHost"></div>
-
-</body>
-</html>
-        <div class="stat-card">
-            <strong>GitHub</strong>
-            <span>Fonte oficial</span>
-        </div>
-
-        <div class="stat-card">
-            <strong>APK</strong>
-            <span>Android</span>
-        </div>
-    </section>
-
-    <h2 class="section-title">Aplicativos</h2>
-
-    <section id="appsList" class="apps-list">
-        <p class="loading">Carregando catálogo...</p>
-    </section>
-
-    <footer class="footer">
-        © 2026 StoreX Hub<br>
-        Desenvolvido por Júnior
-    </footer>
-
-</main>
-
-<section id="detailsPage" class="details-page" hidden>
-
-    <div class="details-container">
-
-        <header class="details-topbar">
-            <button id="backButton" class="back-button">‹</button>
-            <h2>Detalhes do app</h2>
-        </header>
-
-        <article class="details-card">
-
-            <div class="details-header">
-                <img id="detailsIcon" class="details-icon" src="" alt="Ícone do app">
-
-                <div>
-                    <h1 id="detailsName">App</h1>
-                    <p id="detailsVersionText">Versão mais atual</p>
-                </div>
-            </div>
-
-            <div class="details-info-grid">
-                <div class="details-info-box">
-                    <span>VERSÃO MAIS ATUAL</span>
-                    <strong id="detailsVersion">--</strong>
-                </div>
-
-                <div class="details-info-box">
-                    <span>TAMANHO</span>
-                    <strong id="detailsSize">--</strong>
-                </div>
-            </div>
-
-            <section class="details-section">
-                <h3>Descrição</h3>
-                <p id="detailsDescription"></p>
-            </section>
-
-            <section class="details-section">
-                <h3>Última atualização</h3>
-                <pre id="detailsChangelog"></pre>
-            </section>
-
-            <section class="details-section">
-                <h3>Sobre o app</h3>
-                <p id="detailsAbout"></p>
-            </section>
-
-            <a id="detailsDownload" class="download-button" href="#" target="_blank" rel="noopener noreferrer">
-                Baixar APK
-            </a>
-
-        </article>
-
-    </div>
-
-</section>
-
-</body>
-</html>            <section class="details-section">
-                <h3>Última atualização</h3>
-                <pre id="detailsChangelog"></pre>
-            </section>
-
-            <section class="details-section">
-                <h3>Sobre o app</h3>
-                <p id="detailsAbout"></p>
-            </section>
-
-            <a id="detailsDownload" class="download-button" href="#" target="_blank" rel="noopener noreferrer">
-                Baixar APK
-            </a>
-
-        </article>
-
-    </div>
-
-</section>
-
-</body>
-</html>    padding: 13px 8px;
-    border-radius: 20px;
-    background: rgba(5, 21, 55, 0.86);
-    border: 1px solid rgba(95, 155, 255, 0.22);
-}
-
-.stat-card strong {
-    display: block;
-    color: #67adff;
-    font-size: 17px;
-}
-
-.stat-card span {
-    display: block;
-    margin-top: 4px;
-    color: #aec5ff;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.section-title {
-    margin: 8px 0 12px;
-    font-size: 20px;
-}
-
-.apps-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.app-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    min-height: 96px;
-    padding: 14px;
-    border-radius: 24px;
-    cursor: pointer;
-    background: linear-gradient(135deg, rgba(3, 12, 32, 0.98), rgba(6, 29, 80, 0.88));
-    border: 1px solid rgba(85, 145, 255, 0.24);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
-}
-
-.app-card:active {
-    transform: scale(0.985);
-    border-color: rgba(105, 170, 255, 0.72);
-}
-
-.app-icon {
-    width: 68px !important;
-    height: 68px !important;
-    border-radius: 19px;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-.app-content {
-    flex: 1;
-    min-width: 0;
-}
-
-.app-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.app-top h3 {
-    font-size: 21px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.app-version {
-    flex-shrink: 0;
-    color: #82bbff;
-    font-size: 12px;
-    font-weight: 900;
-    padding: 5px 9px;
-    border-radius: 999px;
-    background: rgba(32, 105, 255, 0.16);
-    border: 1px solid rgba(92, 155, 255, 0.22);
-}
-
-.app-description {
-    margin: 5px 0 9px;
-    color: #b9cbff;
-    font-size: 13px;
-    line-height: 1.35;
-}
-
-.app-meta {
-    display: flex;
-    gap: 8px;
-}
-
-.app-meta span {
-    color: #e4eeff;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 5px 9px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.075);
-}
-
-.footer {
-    margin: 30px 0 14px;
-    text-align: center;
-    color: #819ddd;
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-.loading {
-    padding: 24px;
-    text-align: center;
-    color: #bbceff;
-}
-
-.details-page {
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    display: none;
-    overflow-y: auto;
-    background:
-        radial-gradient(circle at 90% 0%, rgba(0, 92, 255, 0.30), transparent 34%),
-        linear-gradient(180deg, #061636 0%, #020814 48%, #000000 100%);
-}
-
-.details-page.show {
-    display: block;
-}
-
-.details-container {
-    width: 100%;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px;
-}
-
-.details-topbar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-}
-
-.back-button {
-    width: 44px;
-    height: 44px;
-    border: none;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.08);
-    color: white;
-    font-size: 30px;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.details-topbar h2 {
-    font-size: 22px;
-}
-
-.details-card {
-    padding: 18px;
-    border-radius: 28px;
-    background: linear-gradient(150deg, rgba(5, 18, 45, 0.98), rgba(5, 31, 86, 0.88));
-    border: 1px solid rgba(105, 165, 255, 0.30);
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
-}
-
-.details-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 18px;
-}
-
-.details-icon {
-    width: 92px !important;
-    height: 92px !important;
-    border-radius: 26px;
-    object-fit: cover;
-    flex-shrink: 0;
-    box-shadow: 0 0 26px rgba(0, 120, 255, 0.32);
-}
-
-.details-header h1 {
-    font-size: 29px;
-}
-
-.details-header p {
-    margin-top: 5px;
-    color: #9ebdff;
-    font-size: 14px;
-    font-weight: 800;
-}
-
-.details-info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 18px;
-}
-
-.details-info-box {
-    padding: 12px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(120, 170, 255, 0.13);
-}
-
-.details-info-box span {
-    display: block;
-    margin-bottom: 5px;
-    color: #8fb6ff;
-    font-size: 12px;
-    font-weight: 900;
-}
-
-.details-info-box strong {
-    font-size: 15px;
-}
-
-.details-section {
-    margin-top: 16px;
-}
-
-.details-section h3 {
-    margin-bottom: 8px;
-    color: #69afff;
-    font-size: 17px;
-}
-
-.details-section p {
-    color: #dbe8ff;
-    font-size: 14px;
-    line-height: 1.55;
-}
-
-.details-section pre {
-    white-space: pre-wrap;
-    color: #dbe8ff;
-    font-size: 14px;
-    line-height: 1.55;
-    padding: 13px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(120, 170, 255, 0.13);
-}
-
-.download-button {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: 900;
-    border-radius: 19px;
-    background: linear-gradient(135deg, #1680ff, #004ed6);
-    box-shadow: 0 12px 30px rgba(0, 100, 255, 0.35);
-}
-
-@media (max-width: 520px) {
-    .page,
-    .details-container {
-        padding: 14px;
-    }
-
-    .store-logo {
-        width: 58px !important;
-        height: 58px !important;
-        border-radius: 17px;
-    }
-
-    .topbar h1 {
-        font-size: 27px;
-    }
-
-    .app-card {
-        border-radius: 22px;
-        padding: 13px;
-    }
-
-    .app-icon {
-        width: 64px !important;
-        height: 64px !important;
-        border-radius: 18px;
-    }
-
-    .app-top h3 {
-        font-size: 19px;
-    }
-
-    .details-icon {
-        width: 82px !important;
-        height: 82px !important;
-        border-radius: 23px;
-    }
-
-    .details-header h1 {
-        font-size: 25px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<main class="page">
-
-    <header class="topbar">
-        <img src="assets/storex.png" class="store-logo" alt="StoreX Hub">
-
-        <div>
-            <h1>StoreX Hub</h1>
-            <p>Apps principais do X Pack</p>
-        </div>
-    </header>
-
-    <section class="hero-card">
-        <h2>Catálogo oficial</h2>
-        <p>Baixe os apps principais do X Pack pelo GitHub oficial, sem instalador interno e com menos risco de bloqueio.</p>
-    </section>
-
-    <section class="stats-row">
-        <div class="stat-card">
-            <strong id="appsCount">3</strong>
-            <span>Apps</span>
-        </div>
-
-        <div class="stat-card">
-            <strong>GitHub</strong>
-            <span>Fonte oficial</span>
-        </div>
-
-        <div class="stat-card">
-            <strong>APK</strong>
-            <span>Android</span>
-        </div>
-    </section>
-
-    <h2 class="section-title">Aplicativos</h2>
-
-    <section id="appsList" class="apps-list">
-        <p class="loading">Carregando catálogo...</p>
-    </section>
-
-    <footer class="footer">
-        © 2026 StoreX Hub<br>
-        Desenvolvido por Júnior
-    </footer>
-
-</main>
-
-<section id="detailsPage" class="details-page">
-
-    <div class="details-container">
-
-        <header class="details-topbar">
-            <button id="backButton" class="back-button">‹</button>
-            <h2>Detalhes do app</h2>
-        </header>
-
-        <article class="details-card">
-
-            <div class="details-header">
-                <img id="detailsIcon" class="details-icon" src="" alt="Ícone do app">
-
-                <div>
-                    <h1 id="detailsName">App</h1>
-                    <p id="detailsVersionText">Versão mais atual</p>
-                </div>
-            </div>
-
-            <div class="details-info-grid">
-                <div class="details-info-box">
-                    <span>VERSÃO MAIS ATUAL</span>
-                    <strong id="detailsVersion">--</strong>
-                </div>
-
-                <div class="details-info-box">
-                    <span>TAMANHO</span>
-                    <strong id="detailsSize">--</strong>
-                </div>
-            </div>
-
-            <section class="details-section">
-                <h3>Descrição</h3>
-                <p id="detailsDescription"></p>
-            </section>
-
-            <section class="details-section">
-                <h3>Última atualização</h3>
-                <pre id="detailsChangelog"></pre>
-            </section>
-
-            <section class="details-section">
-                <h3>Sobre o app</h3>
-                <p id="detailsAbout"></p>
-            </section>
-
-            <a id="detailsDownload" class="download-button" href="#" target="_blank" rel="noopener noreferrer">
-                Baixar APK
-            </a>
-
-        </article>
-
-    </div>
-
-</section>
-
-<script>
-const appsList = document.getElementById("appsList");
-const appsCount = document.getElementById("appsCount");
-
-const detailsPage = document.getElementById("detailsPage");
-const backButton = document.getElementById("backButton");
-
-const detailsIcon = document.getElementById("detailsIcon");
-const detailsName = document.getElementById("detailsName");
-const detailsVersionText = document.getElementById("detailsVersionText");
-const detailsVersion = document.getElementById("detailsVersion");
-const detailsSize = document.getElementById("detailsSize");
-const detailsDescription = document.getElementById("detailsDescription");
-const detailsChangelog = document.getElementById("detailsChangelog");
-const detailsAbout = document.getElementById("detailsAbout");
-const detailsDownload = document.getElementById("detailsDownload");
-
-async function loadApps() {
-    try {
-        const response = await fetch("apps.json?v=" + Date.now());
-
-        if (!response.ok) {
-            throw new Error("apps.json não encontrado");
-        }
-
-        const apps = await response.json();
-
-        appsCount.textContent = apps.length;
-        appsList.innerHTML = "";
-
-        apps.forEach(app => {
-            const card = document.createElement("article");
-            card.className = "app-card";
-
-            const icon = document.createElement("img");
-            icon.className = "app-icon";
-            icon.src = app.icon;
-            icon.alt = app.name;
-
-            const content = document.createElement("div");
-            content.className = "app-content";
-
-            const top = document.createElement("div");
-            top.className = "app-top";
-
-            const name = document.createElement("h3");
-            name.textContent = app.name;
-
-            const version = document.createElement("span");
-            version.className = "app-version";
-            version.textContent = app.versionName;
-
-            top.appendChild(name);
-            top.appendChild(version);
-
-            const desc = document.createElement("p");
-            desc.className = "app-description";
-            desc.textContent = app.description;
-
-            const meta = document.createElement("div");
-            meta.className = "app-meta";
-
-            const size = document.createElement("span");
-            size.textContent = app.size;
-
-            const type = document.createElement("span");
-            type.textContent = "APK";
-
-            meta.appendChild(size);
-            meta.appendChild(type);
-
-            content.appendChild(top);
-            content.appendChild(desc);
-            content.appendChild(meta);
-
-            card.appendChild(icon);
-            card.appendChild(content);
-
-            card.addEventListener("click", () => openDetails(app));
-
-            appsList.appendChild(card);
-        });
-
-    } catch (error) {
-        appsList.innerHTML = "<p class='loading'>Erro ao carregar o catálogo. Confira o apps.json.</p>";
-    }
-}
-
-function openDetails(app) {
-    detailsIcon.src = app.icon;
-    detailsName.textContent = app.name;
-    detailsVersionText.textContent = "Versão mais atual • " + app.versionName;
-
-    detailsVersion.textContent = app.versionName;
-    detailsSize.textContent = app.size;
-
-    detailsDescription.textContent = app.description;
-    detailsChangelog.textContent = app.latestUpdateLog || "Sem changelog disponível.";
-    detailsAbout.textContent = app.aboutLog || app.about || "Sem informações adicionais.";
-    detailsDownload.href = app.apkUrl;
-
-    detailsPage.classList.add("show");
-    document.body.classList.add("no-scroll");
-}
-
-function closeDetails() {
-    detailsPage.classList.remove("show");
-    document.body.classList.remove("no-scroll");
-}
-
-backButton.addEventListener("click", closeDetails);
-
-window.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-        closeDetails();
-    }
-});
-
-loadApps();
-</script>
-
-</body>
-</html>                    <h3>Última atualização</h3>
-                    <pre id="detailsChangelog"></pre>
-                </section>
-
-                <section class="details-section">
-                    <h3>Sobre o app</h3>
-                    <p id="detailsAbout"></p>
-                </section>
-
-                <a id="detailsDownload" class="download-button" href="#" target="_blank" rel="noopener noreferrer">
-                    Baixar APK
-                </a>
-
-            </article>
-
-        </div>
-
-    </section>
-
-    <script>
-        const appsList = document.getElementById("appsList");
-        const appsCount = document.getElementById("appsCount");
-
-        const detailsPage = document.getElementById("detailsPage");
-        const backButton = document.getElementById("backButton");
-
-        const detailsIcon = document.getElementById("detailsIcon");
-        const detailsName = document.getElementById("detailsName");
-        const detailsVersionText = document.getElementById("detailsVersionText");
-        const detailsVersion = document.getElementById("detailsVersion");
-        const detailsSize = document.getElementById("detailsSize");
-        const detailsDescription = document.getElementById("detailsDescription");
-        const detailsChangelog = document.getElementById("detailsChangelog");
-        const detailsAbout = document.getElementById("detailsAbout");
-        const detailsDownload = document.getElementById("detailsDownload");
-
-        async function loadApps() {
-            try {
-                const response = await fetch("apps.json?v=" + Date.now());
-
-                if (!response.ok) {
-                    throw new Error("apps.json não encontrado");
-                }
-
-                const apps = await response.json();
-
-                appsCount.textContent = apps.length;
-                appsList.innerHTML = "";
-
-                apps.forEach(app => {
-                    const card = document.createElement("article");
-                    card.className = "app-card";
-
-                    const icon = document.createElement("img");
-                    icon.className = "app-icon";
-                    icon.src = app.icon;
-                    icon.alt = app.name;
-
-                    const content = document.createElement("div");
-                    content.className = "app-content";
-
-                    const top = document.createElement("div");
-                    top.className = "app-top";
-
-                    const name = document.createElement("h3");
-                    name.textContent = app.name;
-
-                    const version = document.createElement("span");
-                    version.textContent = app.versionName;
-
-                    top.appendChild(name);
-                    top.appendChild(version);
-
-                    const desc = document.createElement("p");
-                    desc.textContent = app.description;
-
-                    const meta = document.createElement("div");
-                    meta.className = "app-meta";
-
-                    const size = document.createElement("span");
-                    size.textContent = app.size;
-
-                    const type = document.createElement("span");
-                    type.textContent = "APK";
-
-                    meta.appendChild(size);
-                    meta.appendChild(type);
-
-                    content.appendChild(top);
-                    content.appendChild(desc);
-                    content.appendChild(meta);
-
-                    card.appendChild(icon);
-                    card.appendChild(content);
-
-                    card.addEventListener("click", () => openDetails(app));
-
-                    appsList.appendChild(card);
-                });
-
-            } catch (error) {
-                appsList.innerHTML = `
-                    <p class="loading">
-                        Erro ao carregar o catálogo. Confira se o apps.json está na raiz do repositório.
-                    </p>
-                `;
-            }
-        }
-
-        function openDetails(app) {
-            detailsIcon.src = app.icon;
-            detailsName.textContent = app.name;
-            detailsVersionText.textContent = "Versão mais atual • " + app.versionName;
-
-            detailsVersion.textContent = app.versionName;
-            detailsSize.textContent = app.size;
-
-            detailsDescription.textContent = app.description;
-            detailsChangelog.textContent = app.latestUpdateLog || "Sem changelog disponível.";
-            detailsAbout.textContent = app.aboutLog || app.about || "Sem informações adicionais.";
-            detailsDownload.href = app.apkUrl;
-
-            detailsPage.classList.add("show");
-            document.body.classList.add("no-scroll");
-        }
-
-        function closeDetails() {
-            detailsPage.classList.remove("show");
-            document.body.classList.remove("no-scroll");
-        }
-
-        backButton.addEventListener("click", closeDetails);
-
-        window.addEventListener("keydown", event => {
-            if (event.key === "Escape") {
-                closeDetails();
-            }
-        });
-
-        loadApps();
-    </script>
-
-</body>
-</html>}
-
-.app-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.app-row h3 {
-    font-size: 21px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.version {
-    flex-shrink: 0;
-    color: #7db8ff;
-    background: rgba(30, 110, 255, 0.14);
-    border: 1px solid rgba(80, 150, 255, 0.22);
-    border-radius: 999px;
-    padding: 5px 9px;
-    font-size: 12px;
-    font-weight: 800;
-}
-
-.desc {
-    color: #b8caff;
-    font-size: 13px;
-    margin: 5px 0 9px;
-    line-height: 1.35;
-}
-
-.meta {
-    display: flex;
-    gap: 8px;
-}
-
-.meta span {
-    color: #e5efff;
-    background: rgba(255, 255, 255, 0.07);
-    border-radius: 999px;
-    padding: 5px 9px;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.footer {
-    margin: 28px 0 14px;
-    text-align: center;
-    color: #819ddd;
-    font-size: 13px;
-}
-
-.details-screen {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background:
-        radial-gradient(circle at top right, rgba(0, 95, 255, 0.24), transparent 35%),
-        linear-gradient(180deg, #061536 0%, #020815 45%, #000000 100%);
-    display: none;
-    overflow-y: auto;
-}
-
-.details-screen.show {
-    display: block;
-}
-
-.details-content {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 18px;
-}
-
-.details-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
-}
-
-.back-btn {
-    width: 44px;
-    height: 44px;
-    border: none;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.08);
-    color: white;
-    font-size: 26px;
-    cursor: pointer;
-}
-
-.details-title {
-    font-size: 22px;
-    font-weight: 900;
-}
-
-.details-card {
-    background: linear-gradient(150deg, rgba(5, 18, 45, 0.98), rgba(6, 30, 78, 0.88));
-    border: 1px solid rgba(90, 155, 255, 0.28);
-    border-radius: 28px;
-    padding: 18px;
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.42);
-}
-
-.details-header {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 18px;
-}
-
-.details-icon {
-    width: 92px;
-    height: 92px;
-    border-radius: 26px;
-    object-fit: cover;
-    box-shadow: 0 0 26px rgba(0, 120, 255, 0.32);
-}
-
-.details-name h2 {
-    font-size: 29px;
-}
-
-.details-name p {
-    color: #9dbdff;
-    font-weight: 800;
-    margin-top: 5px;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 18px;
-}
-
-.info-box {
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(120, 170, 255, 0.13);
-    border-radius: 18px;
-    padding: 12px;
-}
-
-.info-box span {
-    display: block;
-    color: #8fb6ff;
-    font-size: 12px;
-    font-weight: 800;
-    margin-bottom: 4px;
-}
-
-.info-box strong {
-    font-size: 15px;
-}
-
-.details-section {
-    margin-top: 16px;
-}
-
-.details-section h3 {
-    color: #69afff;
-    font-size: 17px;
-    margin-bottom: 8px;
-}
-
-.details-section p,
-.details-section pre {
-    color: #dbe8ff;
-    line-height: 1.55;
-    font-size: 14px;
-}
-
-.details-section pre {
-    white-space: pre-wrap;
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(120, 170, 255, 0.13);
-    border-radius: 18px;
-    padding: 13px;
-}
-
-.download-btn {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(135deg, #1680ff, #004ed6);
-    border-radius: 19px;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: 900;
-    box-shadow: 0 12px 30px rgba(0, 100, 255, 0.35);
-}
-
-.loading {
-    text-align: center;
-    color: #b9ccff;
-    padding: 22px;
-}
-
-@media (max-width: 520px) {
-    .page,
-    .details-content {
-        padding: 14px;
-    }
-
-    .title h1 {
-        font-size: 27px;
-    }
-
-    .logo {
-        width: 58px;
-        height: 58px;
-    }
-
-    .app-icon {
-        width: 64px;
-        height: 64px;
-        border-radius: 18px;
-    }
-
-    .app-row h3 {
-        font-size: 19px;
-    }
-
-    .details-icon {
-        width: 82px;
-        height: 82px;
-        border-radius: 23px;
-    }
-
-    .details-name h2 {
-        font-size: 25px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<main class="page">
-
-    <header class="topbar">
-        <img src="assets/storex.png" class="logo" alt="StoreX Hub">
-        <div class="title">
-            <h1>StoreX Hub</h1>
-            <p>Apps principais do X Pack</p>
-        </div>
-    </header>
-
-    <section class="hero">
-        <h2>Catálogo oficial</h2>
-        <p>Baixe os apps principais do X Pack pelo GitHub oficial, sem instalador interno e com menos risco de bloqueio.</p>
-    </section>
-
-    <section class="store-stats">
-        <div class="stat">
-            <strong id="appsCount">3</strong>
-            <span>Apps</span>
-        </div>
-
-        <div class="stat">
-            <strong>GitHub</strong>
-            <span>Fonte oficial</span>
-        </div>
-
-        <div class="stat">
-            <strong>APK</strong>
-            <span>Android</span>
-        </div>
-    </section>
-
-    <h2 class="section-title">Aplicativos</h2>
-
-    <section class="apps" id="appsList">
-        <p class="loading">Carregando catálogo...</p>
-    </section>
-
-    <footer class="footer">
-        © 2026 StoreX Hub<br>
-        Desenvolvido por Júnior
-    </footer>
-
-</main>
-
-<section class="details-screen" id="detailsScreen">
-    <div class="details-content">
-
-        <div class="details-top">
-            <button class="back-btn" id="backBtn">‹</button>
-            <div class="details-title">Detalhes do app</div>
-        </div>
-
-        <article class="details-card">
-            <div class="details-header">
-                <img id="detailsIcon" class="details-icon" src="" alt="Ícone">
-
-                <div class="details-name">
-                    <h2 id="detailsName">App</h2>
-                    <p id="detailsSubtitle">Versão mais atual</p>
-                </div>
-            </div>
-
-            <div class="info-grid">
-                <div class="info-box">
-                    <span>VERSÃO MAIS ATUAL</span>
-                    <strong id="detailsVersion">--</strong>
-                </div>
-
-                <div class="info-box">
-                    <span>TAMANHO</span>
-                    <strong id="detailsSize">--</strong>
-                </div>
-            </div>
-
-            <div class="details-section">
-                <h3>Descrição</h3>
-                <p id="detailsDescription"></p>
-            </div>
-
-            <div class="details-section">
-                <h3>Última atualização</h3>
-                <pre id="detailsChangelog"></pre>
-            </div>
-
-            <div class="details-section">
-                <h3>Sobre o app</h3>
-                <p id="detailsAbout"></p>
-            </div>
-
-            <a id="detailsDownload" class="download-btn" href="#" target="_blank">
-                Baixar APK
-            </a>
-        </article>
-
-    </div>
-</section>
-
-<script>
-const appsList = document.getElementById("appsList");
-const appsCount = document.getElementById("appsCount");
-
-const detailsScreen = document.getElementById("detailsScreen");
-const backBtn = document.getElementById("backBtn");
-
-const detailsIcon = document.getElementById("detailsIcon");
-const detailsName = document.getElementById("detailsName");
-const detailsSubtitle = document.getElementById("detailsSubtitle");
-const detailsVersion = document.getElementById("detailsVersion");
-const detailsSize = document.getElementById("detailsSize");
-const detailsDescription = document.getElementById("detailsDescription");
-const detailsChangelog = document.getElementById("detailsChangelog");
-const detailsAbout = document.getElementById("detailsAbout");
-const detailsDownload = document.getElementById("detailsDownload");
-
-async function loadApps() {
-    try {
-        const response = await fetch("apps.json?v=" + Date.now());
-        const apps = await response.json();
-
-        appsCount.textContent = apps.length;
-        appsList.innerHTML = "";
-
-        apps.forEach(app => {
-            const card = document.createElement("article");
-            card.className = "app-card";
-
-            card.innerHTML = `
-                <img src="${app.icon}" class="app-icon" alt="${app.name}">
-                <div class="app-main">
-                    <div class="app-row">
-                        <h3>${app.name}</h3>
-                        <span class="version">${app.versionName}</span>
-                    </div>
-                    <p class="desc">${app.description}</p>
-                    <div class="meta">
-                        <span>${app.size}</span>
-                        <span>APK</span>
-                    </div>
-                </div>
-            `;
-
-            card.addEventListener("click", () => openDetails(app));
-            appsList.appendChild(card);
-        });
-
-    } catch (e) {
-        appsList.innerHTML = "<p class='loading'>Erro ao carregar apps.json</p>";
-    }
-}
-
-function openDetails(app) {
-    detailsIcon.src = app.icon;
-    detailsName.textContent = app.name;
-    detailsSubtitle.textContent = "Versão mais atual • " + app.versionName;
-    detailsVersion.textContent = app.versionName;
-    detailsSize.textContent = app.size;
-    detailsDescription.textContent = app.description;
-    detailsChangelog.textContent = app.latestUpdateLog || "Sem changelog disponível.";
-    detailsAbout.textContent = app.aboutLog || app.about || "Sem log geral disponível.";
-    detailsDownload.href = app.apkUrl;
-
-    detailsScreen.classList.add("show");
-    document.body.style.overflow = "hidden";
-}
-
-function closeDetails() {
-    detailsScreen.classList.remove("show");
-    document.body.style.overflow = "";
-}
-
-backBtn.addEventListener("click", closeDetails);
-
-window.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-        closeDetails();
-    }
-});
-
-loadApps();
-</script>
-
-</body>
-</html>
-.logo {
-    width: 64px;
-    height: 64px;
-    border-radius: 18px;
-    object-fit: cover;
-    box-shadow: 0 0 24px rgba(0, 110, 255, 0.5);
-}
-
-.title h1 {
-    font-size: 30px;
-    letter-spacing: -1px;
-}
-
-.title p {
-    margin-top: 3px;
-    color: #9fbaff;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.hero {
-    background:
-        linear-gradient(135deg, rgba(24, 90, 210, 0.45), rgba(0, 0, 0, 0.4));
-    border: 1px solid rgba(93, 154, 255, 0.28);
-    border-radius: 26px;
-    padding: 18px;
-    margin-bottom: 16px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-}
-
-.hero h2 {
-    font-size: 22px;
-    margin-bottom: 6px;
-}
-
-.hero p {
-    color: #c5d8ff;
-    line-height: 1.45;
-    font-size: 14px;
-}
-
-.store-stats {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 18px;
-}
-
-.stat {
-    flex: 1;
-    background: rgba(5, 20, 52, 0.85);
-    border: 1px solid rgba(90, 150, 255, 0.22);
-    border-radius: 20px;
-    padding: 13px 10px;
-    text-align: center;
-}
-
-.stat strong {
-    display: block;
-    color: #67adff;
-    font-size: 18px;
-}
-
-.stat span {
-    display: block;
-    margin-top: 4px;
-    color: #adc4ff;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.section-title {
-    font-size: 20px;
-    margin: 8px 0 12px;
-}
-
-.apps {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.app-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    min-height: 96px;
-    padding: 14px;
-    border-radius: 24px;
-    cursor: pointer;
-    background:
-        linear-gradient(135deg, rgba(4, 14, 35, 0.96), rgba(8, 29, 70, 0.88));
-    border: 1px solid rgba(86, 145, 255, 0.22);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
-    transition: transform 0.18s ease, border-color 0.18s ease;
-}
-
-.app-card:active {
-    transform: scale(0.98);
-    border-color: rgba(90, 170, 255, 0.75);
-}
-
-.app-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 19px;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-.app-main {
-    flex: 1;
-    min-width: 0;
-}
-
-.app-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.app-row h3 {
-    font-size: 21px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.version {
-    flex-shrink: 0;
-    color: #7db8ff;
-    background: rgba(30, 110, 255, 0.14);
-    border: 1px solid rgba(80, 150, 255, 0.22);
-    border-radius: 999px;
-    padding: 5px 9px;
-    font-size: 12px;
-    font-weight: 800;
-}
-
-.desc {
-    color: #b8caff;
-    font-size: 13px;
-    margin: 5px 0 9px;
-    line-height: 1.35;
-}
-
-.meta {
-    display: flex;
-    gap: 8px;
-}
-
-.meta span {
-    color: #e5efff;
-    background: rgba(255, 255, 255, 0.07);
-    border-radius: 999px;
-    padding: 5px 9px;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.footer {
-    margin: 28px 0 14px;
-    text-align: center;
-    color: #819ddd;
-    font-size: 13px;
-}
-
-/* DETALHES ESTILO STOREX */
-
-.details-screen {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background:
-        radial-gradient(circle at top right, rgba(0, 95, 255, 0.24), transparent 35%),
-        linear-gradient(180deg, #061536 0%, #020815 45%, #000000 100%);
-    display: none;
-    overflow-y: auto;
-}
-
-.details-screen.show {
-    display: block;
-}
-
-.details-content {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 18px;
-}
-
-.details-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
-}
-
-.back-btn {
-    width: 44px;
-    height: 44px;
-    border: none;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.08);
-    color: white;
-    font-size: 26px;
-    cursor: pointer;
-}
-
-.details-title {
-    font-size: 22px;
-    font-weight: 900;
-}
-
-.details-card {
-    background:
-        linear-gradient(150deg, rgba(5, 18, 45, 0.98), rgba(6, 30, 78, 0.88));
-    border: 1px solid rgba(90, 155, 255, 0.28);
-    border-radius: 28px;
-    padding: 18px;
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.42);
-}
-
-.details-header {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 18px;
-}
-
-.details-icon {
-    width: 92px;
-    height: 92px;
-    border-radius: 26px;
-    object-fit: cover;
-    box-shadow: 0 0 26px rgba(0, 120, 255, 0.32);
-}
-
-.details-name h2 {
-    font-size: 29px;
-}
-
-.details-name p {
-    color: #9dbdff;
-    font-weight: 800;
-    margin-top: 5px;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 18px;
-}
-
-.info-box {
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(120, 170, 255, 0.13);
-    border-radius: 18px;
-    padding: 12px;
-}
-
-.info-box span {
-    display: block;
-    color: #8fb6ff;
-    font-size: 12px;
-    font-weight: 800;
-    margin-bottom: 4px;
-}
-
-.info-box strong {
-    font-size: 15px;
-}
-
-.details-section {
-    margin-top: 16px;
-}
-
-.details-section h3 {
-    color: #69afff;
-    font-size: 17px;
-    margin-bottom: 8px;
-}
-
-.details-section p,
-.details-section pre {
-    color: #dbe8ff;
-    line-height: 1.55;
-    font-size: 14px;
-}
-
-.details-section pre {
-    white-space: pre-wrap;
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(120, 170, 255, 0.13);
-    border-radius: 18px;
-    padding: 13px;
-}
-
-.download-btn {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(135deg, #1680ff, #004ed6);
-    border-radius: 19px;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: 900;
-    box-shadow: 0 12px 30px rgba(0, 100, 255, 0.35);
-}
-
-.download-btn:active {
-    transform: scale(0.98);
-}
-
-.loading {
-    text-align: center;
-    color: #b9ccff;
-    padding: 22px;
-}
-
-@media (max-width: 520px) {
-    .page,
-    .details-content {
-        padding: 14px;
-    }
-
-    .title h1 {
-        font-size: 27px;
-    }
-
-    .logo {
-        width: 58px;
-        height: 58px;
-    }
-
-    .hero {
-        border-radius: 22px;
-    }
-
-    .app-card {
-        border-radius: 22px;
-        padding: 13px;
-    }
-
-    .app-icon {
-        width: 64px;
-        height: 64px;
-        border-radius: 18px;
-    }
-
-    .app-row h3 {
-        font-size: 19px;
-    }
-
-    .details-header {
-        align-items: flex-start;
-    }
-
-    .details-icon {
-        width: 82px;
-        height: 82px;
-        border-radius: 23px;
-    }
-
-    .details-name h2 {
-        font-size: 25px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<main class="page" id="homePage">
-
-    <header class="topbar">
-        <img src="assets/storex.png" class="logo" alt="StoreX Hub">
-        <div class="title">
-            <h1>StoreX Hub</h1>
-            <p>Apps principais do X Pack</p>
-        </div>
-    </header>
-
-    <section class="hero">
-        <h2>Catálogo oficial</h2>
-        <p>Baixe os apps principais do X Pack pelo GitHub oficial, sem instalador interno e com menos risco de bloqueio.</p>
-    </section>
-
-    <section class="store-stats">
-        <div class="stat">
-            <strong id="appsCount">3</strong>
-            <span>Apps</span>
-        </div>
-
-        <div class="stat">
-            <strong>GitHub</strong>
-            <span>Fonte oficial</span>
-        </div>
-
-        <div class="stat">
-            <strong>APK</strong>
-            <span>Android</span>
-        </div>
-    </section>
-
-    <h2 class="section-title">Aplicativos</h2>
-
-    <section class="apps" id="appsList">
-        <p class="loading">Carregando catálogo...</p>
-    </section>
-
-    <footer class="footer">
-        © 2026 StoreX Hub<br>
-        Desenvolvido por Júnior
-    </footer>
-
-</main>
-
-<section class="details-screen" id="detailsScreen">
-    <div class="details-content">
-
-        <div class="details-top">
-            <button class="back-btn" id="backBtn">‹</button>
-            <div class="details-title">Detalhes do app</div>
-        </div>
-
-        <article class="details-card">
-            <div class="details-header">
-                <img id="detailsIcon" class="details-icon" src="" alt="Ícone">
-
-                <div class="details-name">
-                    <h2 id="detailsName">App</h2>
-                    <p id="detailsSubtitle">Versão mais atual</p>
-                </div>
-            </div>
-
-            <div class="info-grid">
-                <div class="info-box">
-                    <span>VERSÃO MAIS ATUAL</span>
-                    <strong id="detailsVersion">--</strong>
-                </div>
-
-                <div class="info-box">
-                    <span>TAMANHO</span>
-                    <strong id="detailsSize">--</strong>
-                </div>
-            </div>
-
-            <div class="details-section">
-                <h3>Descrição</h3>
-                <p id="detailsDescription"></p>
-            </div>
-
-            <div class="details-section">
-                <h3>Última atualização</h3>
-                <pre id="detailsChangelog"></pre>
-            </div>
-
-            <div class="details-section">
-                <h3>Sobre o app</h3>
-                <p id="detailsAbout"></p>
-            </div>
-
-            <a id="detailsDownload" class="download-btn" href="#" target="_blank">
-                Baixar APK
-            </a>
-        </article>
-
-    </div>
-</section>
-
-<script>
-const appsList = document.getElementById("appsList");
-const appsCount = document.getElementById("appsCount");
-
-const detailsScreen = document.getElementById("detailsScreen");
-const backBtn = document.getElementById("backBtn");
-
-const detailsIcon = document.getElementById("detailsIcon");
-const detailsName = document.getElementById("detailsName");
-const detailsSubtitle = document.getElementById("detailsSubtitle");
-const detailsVersion = document.getElementById("detailsVersion");
-const detailsSize = document.getElementById("detailsSize");
-const detailsDescription = document.getElementById("detailsDescription");
-const detailsChangelog = document.getElementById("detailsChangelog");
-const detailsAbout = document.getElementById("detailsAbout");
-const detailsDownload = document.getElementById("detailsDownload");
-
-async function loadApps() {
-    try {
-        const response = await fetch("apps.json?v=" + Date.now());
-        const apps = await response.json();
-
-        appsCount.textContent = apps.length;
-        appsList.innerHTML = "";
-
-        apps.forEach(app => {
-            const card = document.createElement("article");
-            card.className = "app-card";
-
-            card.innerHTML = `
-                <img src="${app.icon}" class="app-icon" alt="${app.name}">
-                <div class="app-main">
-                    <div class="app-row">
-                        <h3>${app.name}</h3>
-                        <span class="version">${app.versionName}</span>
-                    </div>
-                    <p class="desc">${app.description}</p>
-                    <div class="meta">
-                        <span>${app.size}</span>
-                        <span>APK</span>
-                    </div>
-                </div>
-            `;
-
-            card.addEventListener("click", () => openDetails(app));
-            appsList.appendChild(card);
-        });
-
-    } catch (e) {
-        appsList.innerHTML = "<p class='loading'>Erro ao carregar apps.json</p>";
-    }
-}
-
-function openDetails(app) {
-    detailsIcon.src = app.icon;
-    detailsName.textContent = app.name;
-    detailsSubtitle.textContent = "Versão mais atual • " + app.versionName;
-    detailsVersion.textContent = app.versionName;
-    detailsSize.textContent = app.size;
-    detailsDescription.textContent = app.description;
-    detailsChangelog.textContent = app.latestUpdateLog || "Sem changelog disponível.";
-    detailsAbout.textContent = app.aboutLog || app.about || "Sem log geral disponível.";
-    detailsDownload.href = app.apkUrl;
-
-    detailsScreen.classList.add("show");
-    document.body.style.overflow = "hidden";
-}
-
-function closeDetails() {
-    detailsScreen.classList.remove("show");
-    document.body.style.overflow = "";
-}
-
-backBtn.addEventListener("click", closeDetails);
 
 window.addEventListener("keydown", event => {
     if (event.key === "Escape") {
