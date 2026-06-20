@@ -1,102 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StoreX Hub</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreX Hub</title>
+    <link rel="stylesheet" href="style.css?v=100">
+    <script src="app.js?v=100" defer></script>
+</head>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    -webkit-tap-highlight-color: transparent;
-}
+<body>
 
-html, body {
-    width: 100%;
-    min-height: 100%;
-    background: #000;
-    color: #fff;
-}
+<main class="page">
 
-body {
-    background:
-        radial-gradient(circle at 90% 0%, rgba(0, 95, 255, 0.28), transparent 36%),
-        linear-gradient(180deg, #071837 0%, #020817 45%, #000000 100%);
-}
+    <header class="topbar">
+        <img src="assets/storex.png" width="62" height="62" class="store-logo" alt="StoreX Hub">
 
-body.no-scroll {
-    overflow: hidden;
-}
+        <div>
+            <h1>StoreX Hub</h1>
+            <p>Apps principais do X Pack</p>
+        </div>
+    </header>
 
-.page {
-    width: 100%;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 16px;
-}
+    <section class="hero-card">
+        <h2>Catálogo oficial</h2>
+        <p>
+            Baixe os apps principais do X Pack pelo GitHub oficial,
+            sem instalador interno e com menos risco de bloqueio.
+        </p>
+    </section>
 
-.topbar {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
-}
+    <section class="stats-row">
+        <div class="stat-card">
+            <strong id="appsCount">3</strong>
+            <span>Apps</span>
+        </div>
 
-.store-logo {
-    width: 62px !important;
-    height: 62px !important;
-    border-radius: 18px;
-    object-fit: cover;
-    flex-shrink: 0;
-    box-shadow: 0 0 24px rgba(0, 120, 255, 0.45);
-}
+        <div class="stat-card">
+            <strong>GitHub</strong>
+            <span>Fonte oficial</span>
+        </div>
 
-.topbar h1 {
-    font-size: 30px;
-    line-height: 1;
-    letter-spacing: -0.8px;
-}
+        <div class="stat-card">
+            <strong>APK</strong>
+            <span>Android</span>
+        </div>
+    </section>
 
-.topbar p {
-    margin-top: 5px;
-    color: #a8c2ff;
-    font-size: 14px;
-    font-weight: 700;
-}
+    <h2 class="section-title">Aplicativos</h2>
 
-.hero-card {
-    padding: 18px;
-    margin-bottom: 16px;
-    border-radius: 24px;
-    background: linear-gradient(135deg, rgba(22, 82, 190, 0.42), rgba(2, 9, 25, 0.78));
-    border: 1px solid rgba(105, 165, 255, 0.28);
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
-}
+    <section id="appsList" class="apps-list">
+        <p class="loading">Carregando catálogo...</p>
+    </section>
 
-.hero-card h2 {
-    font-size: 22px;
-    margin-bottom: 6px;
-}
+    <footer class="footer">
+        © 2026 StoreX Hub<br>
+        Desenvolvido por Júnior
+    </footer>
 
-.hero-card p {
-    color: #c9d9ff;
-    font-size: 14px;
-    line-height: 1.45;
-}
+</main>
 
-.stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 18px;
-}
+<section id="detailsPage" class="details-page" hidden>
 
-.stat-card {
-    text-align: center;
-    padding: 13px 8px;
+    <div class="details-container">
+
+        <header class="details-topbar">
+            <button id="backButton" class="back-button">‹</button>
+            <h2>Detalhes do app</h2>
+        </header>
+
+        <article class="details-card">
+
+            <div class="details-header">
+                <img id="detailsIcon" width="92" height="92" class="details-icon" src="" alt="Ícone do app">
+
+                <div>
+                    <h1 id="detailsName">App</h1>
+                    <p id="detailsVersionText">Versão mais atual</p>
+                </div>
+            </div>
+
+            <div class="details-info-grid">
+                <div class="details-info-box">
+                    <span>VERSÃO MAIS ATUAL</span>
+                    <strong id="detailsVersion">--</strong>
+                </div>
+
+                <div class="details-info-box">
+                    <span>TAMANHO</span>
+                    <strong id="detailsSize">--</strong>
+                </div>
+            </div>
+
+            <section class="details-section">
+                <h3>Descrição</h3>
+                <p id="detailsDescription"></p>
+            </section>
+
+            <section class="details-section">
+                <h3>Última atualização</h3>
+                <pre id="detailsChangelog"></pre>
+            </section>
+
+            <section class="details-section">
+                <h3>Sobre o app</h3>
+                <p id="detailsAbout"></p>
+            </section>
+
+            <a id="detailsDownload" class="download-button" href="#" target="_blank" rel="noopener noreferrer">
+                Baixar APK
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+</body>
+</html>    padding: 13px 8px;
     border-radius: 20px;
     background: rgba(5, 21, 55, 0.86);
     border: 1px solid rgba(95, 155, 255, 0.22);
