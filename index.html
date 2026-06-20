@@ -1,151 +1,245 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StoreX Hub</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoreX Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    -webkit-tap-highlight-color: transparent;
-}
+<body>
 
-body {
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at top right, rgba(0, 90, 255, 0.28), transparent 35%),
-        linear-gradient(180deg, #061536 0%, #020815 42%, #000000 100%);
-    color: white;
-}
+    <main class="page" id="homePage">
 
-.page {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 18px;
-}
+        <header class="topbar">
+            <img src="assets/storex.png" class="store-logo" alt="StoreX Hub">
 
-.topbar {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
-}
+            <div>
+                <h1>StoreX Hub</h1>
+                <p>Apps principais do X Pack</p>
+            </div>
+        </header>
 
-.logo {
-    width: 64px;
-    height: 64px;
-    border-radius: 18px;
-    object-fit: cover;
-    box-shadow: 0 0 24px rgba(0, 110, 255, 0.5);
-}
+        <section class="hero-card">
+            <h2>Catálogo oficial</h2>
+            <p>
+                Baixe os apps principais do X Pack pelo GitHub oficial,
+                sem instalador interno e com menos risco de bloqueio.
+            </p>
+        </section>
 
-.title h1 {
-    font-size: 30px;
-    letter-spacing: -1px;
-}
+        <section class="stats-row">
+            <div class="stat-card">
+                <strong id="appsCount">3</strong>
+                <span>Apps</span>
+            </div>
 
-.title p {
-    margin-top: 3px;
-    color: #9fbaff;
-    font-size: 14px;
-    font-weight: 700;
-}
+            <div class="stat-card">
+                <strong>GitHub</strong>
+                <span>Fonte oficial</span>
+            </div>
 
-.hero {
-    background: linear-gradient(135deg, rgba(24, 90, 210, 0.45), rgba(0, 0, 0, 0.4));
-    border: 1px solid rgba(93, 154, 255, 0.28);
-    border-radius: 26px;
-    padding: 18px;
-    margin-bottom: 16px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-}
+            <div class="stat-card">
+                <strong>APK</strong>
+                <span>Android</span>
+            </div>
+        </section>
 
-.hero h2 {
-    font-size: 22px;
-    margin-bottom: 6px;
-}
+        <h2 class="section-title">Aplicativos</h2>
 
-.hero p {
-    color: #c5d8ff;
-    line-height: 1.45;
-    font-size: 14px;
-}
+        <section id="appsList" class="apps-list">
+            <p class="loading">Carregando catálogo...</p>
+        </section>
 
-.store-stats {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 18px;
-}
+        <footer class="footer">
+            © 2026 StoreX Hub<br>
+            Desenvolvido por Júnior
+        </footer>
 
-.stat {
-    flex: 1;
-    background: rgba(5, 20, 52, 0.85);
-    border: 1px solid rgba(90, 150, 255, 0.22);
-    border-radius: 20px;
-    padding: 13px 10px;
-    text-align: center;
-}
+    </main>
 
-.stat strong {
-    display: block;
-    color: #67adff;
-    font-size: 18px;
-}
+    <section id="detailsPage" class="details-page">
 
-.stat span {
-    display: block;
-    margin-top: 4px;
-    color: #adc4ff;
-    font-size: 12px;
-    font-weight: 700;
-}
+        <div class="details-container">
 
-.section-title {
-    font-size: 20px;
-    margin: 8px 0 12px;
-}
+            <header class="details-topbar">
+                <button id="backButton" class="back-button">‹</button>
+                <h2>Detalhes do app</h2>
+            </header>
 
-.apps {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+            <article class="details-card">
 
-.app-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    min-height: 96px;
-    padding: 14px;
-    border-radius: 24px;
-    cursor: pointer;
-    background: linear-gradient(135deg, rgba(4, 14, 35, 0.96), rgba(8, 29, 70, 0.88));
-    border: 1px solid rgba(86, 145, 255, 0.22);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
-    transition: transform 0.18s ease, border-color 0.18s ease;
-}
+                <div class="details-header">
+                    <img id="detailsIcon" class="details-icon" src="" alt="Ícone do app">
 
-.app-card:active {
-    transform: scale(0.98);
-    border-color: rgba(90, 170, 255, 0.75);
-}
+                    <div>
+                        <h1 id="detailsName">App</h1>
+                        <p id="detailsVersionText">Versão mais atual</p>
+                    </div>
+                </div>
 
-.app-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 19px;
-    object-fit: cover;
-    flex-shrink: 0;
-}
+                <div class="details-info-grid">
+                    <div class="details-info-box">
+                        <span>VERSÃO MAIS ATUAL</span>
+                        <strong id="detailsVersion">--</strong>
+                    </div>
 
-.app-main {
-    flex: 1;
-    min-width: 0;
-}
+                    <div class="details-info-box">
+                        <span>TAMANHO</span>
+                        <strong id="detailsSize">--</strong>
+                    </div>
+                </div>
+
+                <section class="details-section">
+                    <h3>Descrição</h3>
+                    <p id="detailsDescription"></p>
+                </section>
+
+                <section class="details-section">
+                    <h3>Última atualização</h3>
+                    <pre id="detailsChangelog"></pre>
+                </section>
+
+                <section class="details-section">
+                    <h3>Sobre o app</h3>
+                    <p id="detailsAbout"></p>
+                </section>
+
+                <a id="detailsDownload" class="download-button" href="#" target="_blank" rel="noopener noreferrer">
+                    Baixar APK
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <script>
+        const appsList = document.getElementById("appsList");
+        const appsCount = document.getElementById("appsCount");
+
+        const detailsPage = document.getElementById("detailsPage");
+        const backButton = document.getElementById("backButton");
+
+        const detailsIcon = document.getElementById("detailsIcon");
+        const detailsName = document.getElementById("detailsName");
+        const detailsVersionText = document.getElementById("detailsVersionText");
+        const detailsVersion = document.getElementById("detailsVersion");
+        const detailsSize = document.getElementById("detailsSize");
+        const detailsDescription = document.getElementById("detailsDescription");
+        const detailsChangelog = document.getElementById("detailsChangelog");
+        const detailsAbout = document.getElementById("detailsAbout");
+        const detailsDownload = document.getElementById("detailsDownload");
+
+        async function loadApps() {
+            try {
+                const response = await fetch("apps.json?v=" + Date.now());
+
+                if (!response.ok) {
+                    throw new Error("apps.json não encontrado");
+                }
+
+                const apps = await response.json();
+
+                appsCount.textContent = apps.length;
+                appsList.innerHTML = "";
+
+                apps.forEach(app => {
+                    const card = document.createElement("article");
+                    card.className = "app-card";
+
+                    const icon = document.createElement("img");
+                    icon.className = "app-icon";
+                    icon.src = app.icon;
+                    icon.alt = app.name;
+
+                    const content = document.createElement("div");
+                    content.className = "app-content";
+
+                    const top = document.createElement("div");
+                    top.className = "app-top";
+
+                    const name = document.createElement("h3");
+                    name.textContent = app.name;
+
+                    const version = document.createElement("span");
+                    version.textContent = app.versionName;
+
+                    top.appendChild(name);
+                    top.appendChild(version);
+
+                    const desc = document.createElement("p");
+                    desc.textContent = app.description;
+
+                    const meta = document.createElement("div");
+                    meta.className = "app-meta";
+
+                    const size = document.createElement("span");
+                    size.textContent = app.size;
+
+                    const type = document.createElement("span");
+                    type.textContent = "APK";
+
+                    meta.appendChild(size);
+                    meta.appendChild(type);
+
+                    content.appendChild(top);
+                    content.appendChild(desc);
+                    content.appendChild(meta);
+
+                    card.appendChild(icon);
+                    card.appendChild(content);
+
+                    card.addEventListener("click", () => openDetails(app));
+
+                    appsList.appendChild(card);
+                });
+
+            } catch (error) {
+                appsList.innerHTML = `
+                    <p class="loading">
+                        Erro ao carregar o catálogo. Confira se o apps.json está na raiz do repositório.
+                    </p>
+                `;
+            }
+        }
+
+        function openDetails(app) {
+            detailsIcon.src = app.icon;
+            detailsName.textContent = app.name;
+            detailsVersionText.textContent = "Versão mais atual • " + app.versionName;
+
+            detailsVersion.textContent = app.versionName;
+            detailsSize.textContent = app.size;
+
+            detailsDescription.textContent = app.description;
+            detailsChangelog.textContent = app.latestUpdateLog || "Sem changelog disponível.";
+            detailsAbout.textContent = app.aboutLog || app.about || "Sem informações adicionais.";
+            detailsDownload.href = app.apkUrl;
+
+            detailsPage.classList.add("show");
+            document.body.classList.add("no-scroll");
+        }
+
+        function closeDetails() {
+            detailsPage.classList.remove("show");
+            document.body.classList.remove("no-scroll");
+        }
+
+        backButton.addEventListener("click", closeDetails);
+
+        window.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                closeDetails();
+            }
+        });
+
+        loadApps();
+    </script>
+
+</body>
+</html>}
 
 .app-row {
     display: flex;
